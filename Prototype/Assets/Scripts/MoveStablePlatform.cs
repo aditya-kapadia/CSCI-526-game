@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MovePlatform : MonoBehaviour
+public class MoveStablePlatform : MonoBehaviour
 {
     private Vector3 screenPoint;
     private Vector3 offset;
@@ -11,8 +11,8 @@ public class MovePlatform : MonoBehaviour
     private bool platformMoved = false;
     private Vector3 lastPlatformPosition;
 
-    [SerializeField] private Text PlatformCountText;
-    private int platformsLeft;
+    [SerializeField] private Text PlatformStableCountText;
+    private int stablePlatformsLeft;
 
     void OnMouseDown()
     {
@@ -35,13 +35,12 @@ public class MovePlatform : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (platformMoved && lastPlatformPosition == new Vector3(-16.61f, 5.99f, 0))
+        if (platformMoved && lastPlatformPosition == new Vector3(-11.07f, 5.99f, 0))
         {
-            platformsLeft = int.Parse(PlatformCountText.text);
-            platformsLeft--;
-            PlatformCountText.text = platformsLeft.ToString();
+            stablePlatformsLeft = int.Parse(PlatformStableCountText.text);
+            stablePlatformsLeft--;
+            PlatformStableCountText.text = stablePlatformsLeft.ToString();
 
         }
-        
     }
 }
