@@ -430,6 +430,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlatformStable
       objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 242cdaa3a8ae849579d507efffac2f5c, type: 2}
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Color.g
       value: 0.41568628
@@ -521,6 +525,10 @@ PrefabInstance:
       propertyPath: m_UseSideBounce
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 242cdaa3a8ae849579d507efffac2f5c, type: 2}
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Color.b
       value: 0.015686275
@@ -1568,6 +1576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d821b7387cdb04ab9b3d1cf8dbb3fe07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemCollector: {fileID: 0}
 --- !u!1 &1091719173
 GameObject:
   m_ObjectHideFlags: 0
