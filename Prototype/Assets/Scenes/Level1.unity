@@ -238,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00001049, y: -166}
+  m_AnchoredPosition: {x: 3.938, y: -88}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166638564
@@ -603,7 +603,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Size.x
-      value: 2.1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0973049
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.051347554
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
@@ -880,10 +888,10 @@ RectTransform:
   m_Father: {fileID: 848357736}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 659, y: -38.059}
-  m_SizeDelta: {x: 415.6679, y: 61.917}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -175, y: -38}
+  m_SizeDelta: {x: 415.668, y: 57.2198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660034944
 MonoBehaviour:
@@ -1185,7 +1193,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.09048438, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1196,7 +1204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 1}
+  m_Size: {x: 3.8190312, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &848357732
 GameObject:
@@ -1500,7 +1508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Resume
+  m_Text: Got it!
 --- !u!222 &983035294
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1613,7 +1621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056115907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.2921, y: 0.3411, z: 0}
+  m_LocalPosition: {x: 11.5, y: 0.1, z: 0}
   m_LocalScale: {x: 0.7408, y: 0.7236, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1844,7 +1852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9de3e186fa943af9b5b523cb4b133e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 9
   jump: 500
   isJumping: 0
 --- !u!114 &1212223060
@@ -1950,7 +1958,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bd3438b80c43b4fa3acadf1534597fcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.1, y: 4.89}
@@ -2335,8 +2343,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1793313429
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc849dcf331ee4cee8b0654448f3214a, type: 3}
   m_Color: {r: 0.6603774, g: 0.22272955, b: 0.015574936, a: 1}
@@ -2419,8 +2427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.1581, y: 30.761}
-  m_SizeDelta: {x: 516.316, y: 317.878}
+  m_AnchoredPosition: {x: 3.938, y: 17.8438}
+  m_SizeDelta: {x: 452.9041, y: 273.2549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1505154990
 MonoBehaviour:
@@ -2474,7 +2482,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Size.x
-      value: 2.1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0445224
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.07773882
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
@@ -2635,7 +2651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128, y: -53}
+  m_AnchoredPosition: {x: 69.5, y: -49.1}
   m_SizeDelta: {x: 51.5456, y: 54.8151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778393129
