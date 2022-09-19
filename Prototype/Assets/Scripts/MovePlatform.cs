@@ -38,7 +38,8 @@ public class MovePlatform : MonoBehaviour
         if (platformMoved && lastPlatformPosition == new Vector3(-11.0f, 6.0f, 0))
         {
             platformsLeft = int.Parse(PlatformCountText.text);
-            platformsLeft--;
+            if (platformsLeft == 0) return;
+                platformsLeft--;
             PlatformCountText.text = platformsLeft.ToString();
 
         }
