@@ -14,6 +14,8 @@ public class MovePlatform : MonoBehaviour
     [SerializeField] private Text PlatformCountText;
     private int platformsLeft;
 
+    public GameObject target;
+
     void OnMouseDown()
     {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -38,13 +40,20 @@ public class MovePlatform : MonoBehaviour
         if (platformMoved && lastPlatformPosition == new Vector3(-11.0f, 6.0f, 0))
         {
             platformsLeft = int.Parse(PlatformCountText.text);
-            if (platformsLeft == 0)
+
+            
+            if (platformsLeft == 1)
             {
+                platformsLeft--;
+                PlatformCountText.text = platformsLeft.ToString();
+                Animator otherAnimator = target.GetComponent<Animator>();
+                otherAnimator.StopPlayback();
+                Debug.Log(platformsLeft);
+                otherAnimator.enabled = false;
                 return;
             }
             platformsLeft--;
             PlatformCountText.text = platformsLeft.ToString();
-
         }
         
     }

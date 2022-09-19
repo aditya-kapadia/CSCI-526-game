@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlatformCountText: {fileID: 1778393129}
+  target: {fileID: 1415157851}
 --- !u!50 &432123567 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6901761420376607766, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
@@ -1946,6 +1947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlatformCountText: {fileID: 1778393129}
+  target: {fileID: 1415157851}
 --- !u!50 &1712250056 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6901761420376607766, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
