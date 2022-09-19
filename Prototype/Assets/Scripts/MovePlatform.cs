@@ -46,10 +46,22 @@ public class MovePlatform : MonoBehaviour
             {
                 platformsLeft--;
                 PlatformCountText.text = platformsLeft.ToString();
+                if(target == null)
+                {
+                    return;
+                }
                 Animator otherAnimator = target.GetComponent<Animator>();
-                otherAnimator.StopPlayback();
+                if(otherAnimator != null)
+                {
+                    otherAnimator.StopPlayback();
+                    otherAnimator.enabled = false;
+                }
+                
                 Debug.Log(platformsLeft);
-                otherAnimator.enabled = false;
+                return;
+            }
+            if(platformsLeft == 0)
+            {
                 return;
             }
             platformsLeft--;
