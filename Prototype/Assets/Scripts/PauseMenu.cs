@@ -8,7 +8,13 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(hintMenu.activeSelf)
+        {
+            Time.timeScale = 0f;
+        } else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     // Update is called once per frame
@@ -27,5 +33,11 @@ public class PauseMenu : MonoBehaviour
             }
         }
         
+    }
+
+    public void resume()
+    {
+        Time.timeScale = 1f;
+        hintMenu.SetActive(false);
     }
 }
