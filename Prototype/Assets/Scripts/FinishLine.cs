@@ -8,9 +8,9 @@ public class FinishLine : MonoBehaviour
 {
     public LevelComplete LevelComplete;
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Goal"))
         {
             //SceneManager.LoadScene("Level2");
             LevelComplete.Setup();
