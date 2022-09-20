@@ -12,8 +12,8 @@ public class MovePlatform : MonoBehaviour
     private Vector3 lastPlatformPosition;
 
     [SerializeField] private Text PlatformCountText;
-    private int platformsLeft;
-
+    public static int platformsLeft;
+    public static int platformsUsed = 0;
     public GameObject target;
 
     void OnMouseDown()
@@ -69,6 +69,7 @@ public class MovePlatform : MonoBehaviour
             }
             platformsLeft--;
             PlatformCountText.text = platformsLeft.ToString();
+            platformsUsed++;
         }
         
     }
