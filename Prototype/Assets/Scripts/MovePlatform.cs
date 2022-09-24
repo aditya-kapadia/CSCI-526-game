@@ -12,10 +12,15 @@ public class MovePlatform : MonoBehaviour
     private Vector3 lastPlatformPosition;
 
     [SerializeField] private Text PlatformCountText;
-    private int platformsLeft;
+    public static int platformsLeft;
+    public static int platformsUsed = 0;
+    public GameObject target;
 
     void OnMouseDown()
     {
+
+		// First delete example mouse
+        Destroy(GameObject.FindWithTag("Cursor"));
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -38,13 +43,33 @@ public class MovePlatform : MonoBehaviour
         if (platformMoved && lastPlatformPosition == new Vector3(-11.0f, 6.0f, 0))
         {
             platformsLeft = int.Parse(PlatformCountText.text);
-            if (platformsLeft == 0)
+
+            
+            if (platformsLeft == 1)
+            {
+                platformsLeft--;
+                PlatformCountText.text = platformsLeft.ToString();
+                if(target == null)
+                {
+                    return;
+                }
+                Animator otherAnimator = target.GetComponent<Animator>();
+                if(otherAnimator != null)
+                {
+                    otherAnimator.StopPlayback();
+                    otherAnimator.enabled = false;
+                }
+                
+                Debug.Log(platformsLeft);
+                return;
+            }
+            if(platformsLeft == 0)
             {
                 return;
             }
             platformsLeft--;
             PlatformCountText.text = platformsLeft.ToString();
-
+            platformsUsed++;
         }
         
     }

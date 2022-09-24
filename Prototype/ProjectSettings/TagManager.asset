@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - Collectable
   - Ground
+  - Cursor
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: Flickering
     uniqueID: 1132228403
+    locked: 0
+  - name: Top
+    uniqueID: 2501653867
     locked: 0

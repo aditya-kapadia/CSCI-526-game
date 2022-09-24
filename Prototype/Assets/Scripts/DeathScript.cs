@@ -8,6 +8,7 @@ public class DeathScript : MonoBehaviour
     public GameObject startPoint;
     public GameObject Player;
 
+    public static int attempts = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,8 @@ public class DeathScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            attempts += 1;
+            Debug.Log("Attempts: "+attempts);
             //Player.transform.position = startPoint.transform.position;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
