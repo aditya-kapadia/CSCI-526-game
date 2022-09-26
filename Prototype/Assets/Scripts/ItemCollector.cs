@@ -9,6 +9,8 @@ public class ItemCollector : MonoBehaviour
 
     [SerializeField] private Text collectablesText;
 
+    [SerializeField] private Text totalCollectablesText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,9 @@ public class ItemCollector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Collectable"))
         {
-            Destroy(other.gameObject);
             collectables++;
-            collectablesText.text = "Collectables: " + collectables + " / 3";
+            collectablesText.text = "Collectables: " + collectables + " / " + totalCollectablesText.text;
+            Destroy(other.gameObject);
         }
     }
 }
