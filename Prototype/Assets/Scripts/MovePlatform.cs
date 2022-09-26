@@ -40,7 +40,7 @@ public class MovePlatform : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (platformMoved && lastPlatformPosition == new Vector3(-11.0f, 6.0f, 0))
+        if (platformMoved && (lastPlatformPosition == new Vector3(-11.0f, 6.0f, 0) || lastPlatformPosition == new Vector3(-15.92f, 6.0f, 0)))
         {
             platformsLeft = int.Parse(PlatformCountText.text);
 
