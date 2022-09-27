@@ -27,6 +27,7 @@ public class DeathScript : MonoBehaviour
         {
             attempts += 1;
             Debug.Log("Attempts: "+attempts);
+            MovePlatform.platformsUsed = 0;
             //Player.transform.position = startPoint.transform.position;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

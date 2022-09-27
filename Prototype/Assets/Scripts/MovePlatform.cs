@@ -60,7 +60,8 @@ public class MovePlatform : MonoBehaviour
                     otherAnimator.enabled = false;
                 }
                 
-                Debug.Log(platformsLeft);
+                // Debug.Log(platformsLeft);
+                 platformsUsed++;
                 return;
             }
             if(platformsLeft == 0)
