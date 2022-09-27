@@ -8,6 +8,9 @@ TagManager:
   - Collectable
   - Ground
   - Cursor
+  - Goal
+  - InBuildMode
+  - InPlayMode
   layers:
   - Default
   - TransparentFX
