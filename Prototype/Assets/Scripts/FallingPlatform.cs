@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FallingPlatform : MonoBehaviour
 {
@@ -23,9 +24,12 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        Button BuildButton = GameObject.Find("BuildButton").GetComponent<Button>();
         {
-            StartCoroutine(Fall());
+            if (BuildButton.gameObject.activeSelf)
+            {
+                StartCoroutine(Fall());
+            }
         }
     }
 

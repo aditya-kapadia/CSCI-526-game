@@ -16,6 +16,12 @@ public class MovePlatform : MonoBehaviour
     public static int platformsUsed = 0;
     public GameObject target;
 
+    private GameObject playIcon;
+
+    private void Start()
+    {
+        playIcon = GameObject.FindWithTag("InBuildMode");
+    }
     void OnMouseDown()
     {
 
@@ -29,17 +35,22 @@ public class MovePlatform : MonoBehaviour
 
     void OnMouseDrag()
     {
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-        
-        transform.position = curPosition;
+        if (playIcon.activeSelf)
+        {
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 
-        platformMoved = true;
+            transform.position = curPosition;
+
+            platformMoved = true;
+        }
 
     }
 
     private void OnMouseUp()
     {
+        if (playIcon.activeSelf)
+        {
         if (platformMoved && (lastPlatformPosition == new Vector3(-13.0f, 6.0f, 0) || lastPlatformPosition == new Vector3(-10.0f, 6.0f, 0)))
         {
             platformsLeft = int.Parse(PlatformCountText.text);
@@ -48,6 +59,7 @@ public class MovePlatform : MonoBehaviour
             if (platformsLeft == 1)
             {
                 platformsLeft--;
+                platformsUsed++;
                 PlatformCountText.text = platformsLeft.ToString();
                 if(target == null)
                 {
@@ -58,19 +70,21 @@ public class MovePlatform : MonoBehaviour
                 {
                     otherAnimator.StopPlayback();
                     otherAnimator.enabled = false;
-                }
-                
-                // Debug.Log(platformsLeft);
-                 platformsUsed++;
-                return;
+                        GameObject playButton = GameObject.FindWithTag("InBuildMode");
+                        playButton.GetComponent<BlinkPulse>().enabled = true;
+                    }
+                    return;
             }
-            if(platformsLeft == 0)
+
+            if (platformsLeft == 0)
             {
                 return;
             }
             platformsLeft--;
             PlatformCountText.text = platformsLeft.ToString();
             platformsUsed++;
+        }
+
         }
         
     }
