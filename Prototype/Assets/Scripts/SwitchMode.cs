@@ -11,8 +11,8 @@ public class SwitchMode : MonoBehaviour, IPointerDownHandler
     private GameObject playerObj;
     private GameObject[] platformArray;
 
-    public Button playIcon;
-    public Button buildIcon;
+    public Button playButton;
+    public Button resetButton;
 
 
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class SwitchMode : MonoBehaviour, IPointerDownHandler
         playerObj = GameObject.FindWithTag("Player");
         platformArray = GameObject.FindGameObjectsWithTag("Platform");
 
-        if (playIcon.gameObject.activeSelf)
+        if (playButton.gameObject.activeSelf)
             BuildMode();
         else
             PlayMode();
@@ -31,15 +31,15 @@ public class SwitchMode : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        bool InBuildMode = playIcon.gameObject.activeSelf;
-        playIcon.gameObject.GetComponent<BlinkPulse>().enabled = false;
-        playIcon.gameObject.GetComponent<Image>().color = new Color(1,1,1);
+        bool InBuildMode = playButton.gameObject.activeSelf;
+        playButton.gameObject.GetComponent<BlinkPulse>().enabled = false;
+        playButton.gameObject.GetComponent<Image>().color = new Color(1,1,1);
 
         if (InBuildMode) // play mode selected
         {
             PlayMode();
-            playIcon.gameObject.SetActive(false);
-            buildIcon.gameObject.SetActive(true);
+            playButton.gameObject.SetActive(false);
+            resetButton.gameObject.SetActive(true);
 
 
 
