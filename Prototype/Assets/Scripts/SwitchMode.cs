@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class SwitchMode : MonoBehaviour, IPointerDownHandler
 {
@@ -43,17 +44,16 @@ public class SwitchMode : MonoBehaviour, IPointerDownHandler
 
 
         }
-        else // build mode selected
+        else // reset selected
         {
-            BuildMode();
-            playIcon.gameObject.SetActive(true);
-            buildIcon.gameObject.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }
 
     void BuildMode()
     {
+        
         foreach (var platform in platformArray)
         {
             playerObj.gameObject.GetComponent<Collider2D>().isTrigger = true;
