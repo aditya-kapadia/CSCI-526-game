@@ -59,6 +59,7 @@ public class MovePlatform : MonoBehaviour
             if (platformsLeft == 1)
             {
                 platformsLeft--;
+                platformsUsed++;
                 PlatformCountText.text = platformsLeft.ToString();
                 if(target == null)
                 {
@@ -73,15 +74,17 @@ public class MovePlatform : MonoBehaviour
                         playButton.GetComponent<BlinkPulse>().enabled = true;
                     }
                     return;
-                }
-                if (platformsLeft == 0)
-                {
-                    return;
-                }
-                platformsLeft--;
-                PlatformCountText.text = platformsLeft.ToString();
-                platformsUsed++;
             }
+
+            if (platformsLeft == 0)
+            {
+                return;
+            }
+            platformsLeft--;
+            PlatformCountText.text = platformsLeft.ToString();
+            platformsUsed++;
+        }
+
         }
         
     }

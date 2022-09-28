@@ -14,7 +14,7 @@ public class sendtogform : MonoBehaviour{
     string URL = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeQgVynm6jwn0omRZByKhqf1KzhGG8tTdZ1RYtjwjg1vAs_Bg/formResponse";
 
     
-    
+    public static int level = 1;
     public DeathScript ds;
     void Start()
     {
@@ -24,21 +24,24 @@ public class sendtogform : MonoBehaviour{
     {
         sessionID = DateTime.Now.Ticks;
         brickCount = MovePlatform.platformsUsed;
+        Debug.Log("BC:"+brickCount);
         attempts = DeathScript.attempts;
         Debug.Log("Attempts in sendform:"+attempts);
             attempts++;
 
         Debug.Log("Send");
-        StartCoroutine(Post(sessionID.ToString(),brickCount.ToString(), attempts.ToString()));
+        StartCoroutine(Post(sessionID.ToString(),brickCount.ToString(), attempts.ToString(), level.ToString()));
     }
 
-    IEnumerator Post(string s1, string s2,string s3)
+    IEnumerator Post(string s1, string s2,string s3, string s4)
     {
         Debug.Log("Post");
         WWWForm form = new WWWForm();
+        Debug.Log(s1+s2+s3+s4);
         form.AddField("entry.252900137",s1);
         form.AddField("entry.1830174599",s2);
         form.AddField("entry.559368451",s3);
+        form.AddField("entry.1720030055",s4);
         UnityWebRequest www = UnityWebRequest.Post(URL,form);
         yield return www.SendWebRequest();
         www.Dispose();

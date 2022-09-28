@@ -8,6 +8,8 @@ public class LevelComplete : MonoBehaviour
     public void Setup()
     {
         sg.Send();
+        MovePlatform.platformsUsed = 0;
+        sendtogform.level = 2;
         gameObject.SetActive(true);
     }
 
