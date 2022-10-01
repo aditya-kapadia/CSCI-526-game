@@ -24,9 +24,9 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Button BuildButton = GameObject.Find("BuildButton").GetComponent<Button>();
+        Button ResetButton = GameObject.Find("ResetButton").GetComponent<Button>();
         {
-            if (BuildButton.gameObject.activeSelf)
+            if (ResetButton.gameObject.activeSelf)
             {
                 StartCoroutine(Fall());
             }
