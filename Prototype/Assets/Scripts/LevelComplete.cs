@@ -9,6 +9,8 @@ public class LevelComplete : MonoBehaviour
     {
         sg.Send();
         MovePlatform.platformsUsed = 0;
+        DeathScript.attempts = 0;
+        ItemCollector.gfromcollectable = 0;
         sendtogform.level = 2;
         gameObject.SetActive(true);
     }

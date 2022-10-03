@@ -38,6 +38,8 @@ public class sendtogform : MonoBehaviour{
             attempts++;
         collectables = ItemCollector.gfromcollectable;
         Debug.Log("Send");
+        deathbyfall.deaths=0;
+        deathbycollision.deaths=0;
         StartCoroutine(Post(sessionID.ToString(),brickCount.ToString(), attempts.ToString(), level.ToString(), collectables.ToString(), enemydeath.ToString(), falldeath.ToString()));
     }
 
