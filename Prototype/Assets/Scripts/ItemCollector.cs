@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ItemCollector : MonoBehaviour
 {
     private int collectables = 0;
-
+    public static int gfromcollectable = 0;
     [SerializeField] private Text collectablesText;
 
     [SerializeField] private Text totalCollectablesText;
@@ -28,6 +28,7 @@ public class ItemCollector : MonoBehaviour
         if (other.gameObject.CompareTag("Collectable"))
         {
             collectables++;
+            gfromcollectable++;
             collectablesText.text = "Collectables: " + collectables + " / " + totalCollectablesText.text;
             Destroy(other.gameObject);
         }

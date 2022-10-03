@@ -26,6 +26,7 @@ public class DeathScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             attempts += 1;
+            ItemCollector.gfromcollectable = 0;
             Debug.Log("Attempts: "+attempts);
             MovePlatform.platformsUsed = 0;
             //Player.transform.position = startPoint.transform.position;
