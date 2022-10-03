@@ -13,7 +13,8 @@ public class sendtogform : MonoBehaviour{
     int attempts;
     string URL = "https://docs.google.com/forms/u/1/d/e/1FAIpQLSeQgVynm6jwn0omRZByKhqf1KzhGG8tTdZ1RYtjwjg1vAs_Bg/formResponse";
 
-    
+    int falldeath;
+    int enemydeath;
     public static int level = 1;
     public DeathScript ds;
     void Start()
@@ -22,6 +23,11 @@ public class sendtogform : MonoBehaviour{
     }
     public void Send()
     {
+        falldeath = deathbyfall.deaths;
+        enemydeath = deathbycollision.deaths;
+        Debug.Log("FD:"+falldeath);
+        Debug.Log("ED:"+enemydeath);
+        
         sessionID = DateTime.Now.Ticks;
         brickCount = MovePlatform.platformsUsed;
         Debug.Log("BC:"+brickCount);
@@ -30,10 +36,10 @@ public class sendtogform : MonoBehaviour{
             attempts++;
 
         Debug.Log("Send");
-        StartCoroutine(Post(sessionID.ToString(),brickCount.ToString(), attempts.ToString(), level.ToString()));
+        StartCoroutine(Post(sessionID.ToString(),brickCount.ToString(), attempts.ToString(), level.ToString(), enemydeath.ToString(), falldeath.ToString()));
     }
 
-    IEnumerator Post(string s1, string s2,string s3, string s4)
+    IEnumerator Post(string s1, string s2,string s3, string s4, string s5, string s6)
     {
         Debug.Log("Post");
         WWWForm form = new WWWForm();
@@ -42,10 +48,13 @@ public class sendtogform : MonoBehaviour{
         form.AddField("entry.1830174599",s2);
         form.AddField("entry.559368451",s3);
         form.AddField("entry.1720030055",s4);
+        form.AddField("entry.1816916965",s5);
+        form.AddField("entry.1642617224",s6);
+         
         UnityWebRequest www = UnityWebRequest.Post(URL,form);
         yield return www.SendWebRequest();
         www.Dispose();
     }
 
-    
+   
 }
