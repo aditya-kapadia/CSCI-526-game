@@ -13,5 +13,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
+    public void GotoLvlSelector() {
 
+        SceneManager.LoadScene("LevelSelectionMenu");
+    }
+
+    public void GotoLvlTwo()
+    {
+
+        SceneManager.LoadScene("Level2");
+    }
+    public void GotoMainMenu()
+    {
+
+        SceneManager.LoadScene("Mainmenu");
+    }
 }
