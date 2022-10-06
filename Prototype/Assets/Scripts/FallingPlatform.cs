@@ -7,7 +7,7 @@ public class FallingPlatform : MonoBehaviour
 {
     private float fallDelay = 1f;
     private float destroyDelay = 2f;
-    //private bool shaking = false;
+    private bool falling = false;
 
     [SerializeField] private Rigidbody2D rb;
     
@@ -26,11 +26,13 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        StartCoroutine(Fall());
+        if (falling == false)
+            StartCoroutine(Fall());
     }
 
     private IEnumerator Fall()
     {
+        falling = true;
 
         yield return new WaitForSeconds(fallDelay);
 
@@ -49,5 +51,7 @@ public class FallingPlatform : MonoBehaviour
         
         rb.bodyType = RigidbodyType2D.Dynamic;
         Destroy(gameObject, destroyDelay);
+
+        falling = false;
     }
 }

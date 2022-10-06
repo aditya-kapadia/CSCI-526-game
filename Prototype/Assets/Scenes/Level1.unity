@@ -654,11 +654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1132228403
+      value: 1011672949
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607770, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_RootOrder
@@ -866,6 +866,7 @@ GameObject:
   - component: {fileID: 536899836}
   - component: {fileID: 536899835}
   - component: {fileID: 536899834}
+  - component: {fileID: 536899839}
   m_Layer: 0
   m_Name: StableImmovablePlatform
   m_TagString: Platform
@@ -977,8 +978,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1132228403
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc849dcf331ee4cee8b0654448f3214a, type: 3}
   m_Color: {r: 0.8517266, g: 0.9339623, b: 0.9290943, a: 1}
@@ -1006,6 +1007,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &536899839
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536899833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04d8b76f7486cad4bb69b41435c09fb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &660034942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StablePlatform2
       objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607764, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -1148,6 +1173,14 @@ PrefabInstance:
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Color.r
       value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1011672949
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607770, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_RootOrder
@@ -1397,7 +1430,7 @@ GameObject:
   - component: {fileID: 728299174}
   - component: {fileID: 728299173}
   - component: {fileID: 728299175}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground Start
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1442,7 +1475,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1011672949
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ade3d01224117411db85f0ebd62af988, type: 3}
@@ -2083,6 +2116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StablePlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607764, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -2134,6 +2171,14 @@ PrefabInstance:
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Color.r
       value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1011672949
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607770, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_RootOrder
@@ -2345,9 +2390,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9de3e186fa943af9b5b523cb4b133e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
-  jump: 500
-  isJumping: 0
+  moveSpeed: 15
+  direction: {x: 0, y: 0}
+  jumpSpeed: 12
+  jumpDelay: 1
+  rb: {fileID: 1212223062}
+  animator: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  maxSpeed: 7
+  linearDrag: 2
+  gravity: 1
+  fallMultiplier: 3
+  onGround: 0
+  groundLength: 1.2
+  colliderOffset: {x: 0.8, y: 0, z: 0}
 --- !u!114 &1212223060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2986,8 +3044,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1793313429
-  m_SortingLayer: 2
+  m_SortingLayerID: 1132228403
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc849dcf331ee4cee8b0654448f3214a, type: 3}
   m_Color: {r: 0.6603774, g: 0.22272955, b: 0.015574936, a: 1}
@@ -3318,6 +3376,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cc849dcf331ee4cee8b0654448f3214a, type: 3}
+    - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1011672949
+      objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607770, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3504,7 +3570,7 @@ GameObject:
   - component: {fileID: 1870773930}
   - component: {fileID: 1870773929}
   - component: {fileID: 1870773928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground End
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3575,7 +3641,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1011672949
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ade3d01224117411db85f0ebd62af988, type: 3}
