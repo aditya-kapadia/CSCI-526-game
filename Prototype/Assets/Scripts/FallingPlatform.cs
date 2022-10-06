@@ -7,8 +7,10 @@ public class FallingPlatform : MonoBehaviour
 {
     private float fallDelay = 1f;
     private float destroyDelay = 2f;
+    //private bool shaking = false;
 
     [SerializeField] private Rigidbody2D rb;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,17 +26,12 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Button ResetButton = GameObject.Find("ResetButton").GetComponent<Button>();
-        {
-            if (ResetButton.gameObject.activeSelf)
-            {
-                StartCoroutine(Fall());
-            }
-        }
+        StartCoroutine(Fall());
     }
 
     private IEnumerator Fall()
     {
+
         yield return new WaitForSeconds(fallDelay);
 
         // Shake platform back and forth before fall
