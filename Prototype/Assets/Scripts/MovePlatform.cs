@@ -26,6 +26,9 @@ public class MovePlatform : MonoBehaviour
 
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         lastPlatformPosition = transform.position;
+
+        // Turn isTrigger on so player cannot collide platforms with self while placing them
+        GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
     void OnMouseDrag()
@@ -41,6 +44,9 @@ public class MovePlatform : MonoBehaviour
 
     private void OnMouseUp()
     {
+        // Turn isTrigger off when player is no longer moving platform
+        GetComponent<BoxCollider2D>().isTrigger = false;
+
         if (platformMoved && (lastPlatformPosition == new Vector3(-13.0f, 6.0f, 0) || lastPlatformPosition == new Vector3(-10.0f, 6.0f, 0)))
         {
             platformsLeft = int.Parse(PlatformCountText.text);
@@ -60,8 +66,8 @@ public class MovePlatform : MonoBehaviour
                 {
                     otherAnimator.StopPlayback();
                     otherAnimator.enabled = false;
-                        GameObject playButton = GameObject.FindWithTag("InBuildMode");
-                        playButton.GetComponent<BlinkPulse>().enabled = true;
+                        //GameObject playButton = GameObject.FindWithTag("InBuildMode");
+                        //playButton.GetComponent<BlinkPulse>().enabled = true;
                     }
                     return;
             }
