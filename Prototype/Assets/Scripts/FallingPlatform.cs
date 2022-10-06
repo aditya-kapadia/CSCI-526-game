@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FallingPlatform : MonoBehaviour
 {
-    private float fallDelay = 0.6f;
+    private float fallDelay = 1f;
     private float destroyDelay = 2f;
 
     [SerializeField] private Rigidbody2D rb;
@@ -36,6 +36,20 @@ public class FallingPlatform : MonoBehaviour
     private IEnumerator Fall()
     {
         yield return new WaitForSeconds(fallDelay);
+
+        // Shake platform back and forth before fall
+        Vector3 origPos = transform.position;
+        for (int i = 0; i < 7; i++)
+        {
+            transform.position = new Vector3(origPos.x - 0.12f, origPos.y);
+            yield return new WaitForSeconds(0.09f);
+            transform.position = origPos;
+            yield return new WaitForSeconds(0.09f);
+            transform.position = new Vector3(origPos.x + 0.12f, origPos.y);
+            yield return new WaitForSeconds(0.09f);
+            transform.position = origPos;
+        }
+        
         rb.bodyType = RigidbodyType2D.Dynamic;
         Destroy(gameObject, destroyDelay);
     }
