@@ -16,12 +16,7 @@ public class MovePlatform : MonoBehaviour
     public static int platformsUsed = 0;
     public GameObject target;
 
-    private GameObject playIcon;
 
-    private void Start()
-    {
-        playIcon = GameObject.FindWithTag("InBuildMode");
-    }
     void OnMouseDown()
     {
 
@@ -35,22 +30,17 @@ public class MovePlatform : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (playIcon.activeSelf)
-        {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 
-            transform.position = curPosition;
+        transform.position = curPosition;
 
-            platformMoved = true;
-        }
+        platformMoved = true;
 
     }
 
     private void OnMouseUp()
     {
-        if (playIcon.activeSelf)
-        {
         if (platformMoved && (lastPlatformPosition == new Vector3(-13.0f, 6.0f, 0) || lastPlatformPosition == new Vector3(-10.0f, 6.0f, 0)))
         {
             platformsLeft = int.Parse(PlatformCountText.text);
@@ -83,8 +73,6 @@ public class MovePlatform : MonoBehaviour
             platformsLeft--;
             PlatformCountText.text = platformsLeft.ToString();
             platformsUsed++;
-        }
-
         }
         
     }
