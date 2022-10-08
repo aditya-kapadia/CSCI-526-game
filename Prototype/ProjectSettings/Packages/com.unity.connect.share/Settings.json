@@ -6,7 +6,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/tiaku/OneDrive/Desktop/CSCI-526-game/Prototype/WebGL Builds;D:/SEM3/526/Git/CSCI-526-game/Prototype/Build;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/master/Builds/Prototype_WebGL1.2;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/CSCI-526-game/Builds/Prototype_WebGL1.0/Prototype_WebGL1.1;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/CSCI-526-game/Builds/Prototype_WebGL1.0/Prototype_WebGL1.0.data.br;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/CSCI-526-game/Builds/Prototype_WebGL1.0;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/master/Builds;C:/Users/tiaku/OneDrive/Desktop/CSCI-526-game/Prototype/WebGL Builds;D:/SEM3/526/Git/CSCI-526-game/Prototype/Build;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/master/Builds/Prototype_WebGL1.2;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/CSCI-526-game/Builds/Prototype_WebGL1.0/Prototype_WebGL1.1;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/CSCI-526-game/Builds/Prototype_WebGL1.0/Prototype_WebGL1.0.data.br;/Users/sarahdepillis/Documents/USC/CSCI 526/Projects/CSCI-526-game/Builds/Prototype_WebGL1.0;;;\"}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
