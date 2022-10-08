@@ -1226,6 +1226,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlatformCountText: {fileID: 1778393129}
   target: {fileID: 536899833}
+--- !u!114 &663169056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663169049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436e56461bb0b024983d6e738ba3dfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &678378522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,6 +2224,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlatformCountText: {fileID: 1778393129}
   target: {fileID: 536899833}
+--- !u!114 &1105288969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105288962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436e56461bb0b024983d6e738ba3dfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179613606
 GameObject:
   m_ObjectHideFlags: 0
