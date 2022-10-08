@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 7f;
     public float linearDrag = 2f;
     public float gravity = 1;
-    public float fallMultiplier = 3f;
+    public float fallMultiplier = 1f;
 
     [Header("Collision")]
     public bool onGround = false;
@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         modifyPhysics();
+
     }
     void moveCharacter(float horizontal)
     {
@@ -93,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.gravityScale = gravity;
-            rb.drag = linearDrag * 0.15f;
+            rb.drag = linearDrag * 0.25f;
             if (rb.velocity.y < 0)
             {
                 rb.gravityScale = gravity * fallMultiplier;

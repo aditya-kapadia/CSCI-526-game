@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("Level2");
     }
+    public void GotoLvlThree()
+    {
+
+        SceneManager.LoadScene("Level3");
+    }
     public void GotoMainMenu()
     {
 
