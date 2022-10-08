@@ -50,10 +50,10 @@ public class BlackHole : MonoBehaviour
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         player.transform.position = destinationBlackHole.transform.position;
         playerCollide = false;
-        destinationBlackHole.GetComponent<BlackHole>().enabled = false;
+        destinationBlackHole.GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(1f);
         destinationBlackHole.GetComponent<BlackHole>().playerCollide = false;
-        destinationBlackHole.GetComponent<BlackHole>().enabled = true;
+        destinationBlackHole.GetComponent<BoxCollider2D>().enabled = true;
     }
 
 
