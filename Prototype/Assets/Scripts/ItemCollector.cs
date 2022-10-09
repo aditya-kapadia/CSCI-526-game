@@ -29,7 +29,7 @@ public static int gfromcollectable = 0;
         {
             collectables++;
             gfromcollectable++;
-            collectablesText.text = "Collectables: " + collectables + " / " + totalCollectablesText.text;
+            collectablesText.text = collectables + " / " + totalCollectablesText.text;
             Destroy(other.gameObject);
         }
     }

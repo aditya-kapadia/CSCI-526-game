@@ -11,11 +11,12 @@ TagManager:
   - Goal
   - InBuildMode
   - InPlayMode
+  - BlackHole
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

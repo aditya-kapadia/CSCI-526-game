@@ -12,7 +12,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Goal"))
         {
-            //SceneManager.LoadScene("Level2");
+            Time.timeScale = 0f;
             LevelComplete.Setup();
 
 
