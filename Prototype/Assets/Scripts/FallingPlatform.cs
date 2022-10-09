@@ -26,6 +26,11 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject.GetComponent("MovePlatform"));
+        }
         if (falling == false)
             StartCoroutine(Fall());
     }
