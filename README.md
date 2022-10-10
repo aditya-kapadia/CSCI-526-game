@@ -18,5 +18,6 @@ Basic Mechanics of the Game -
   * Stable bricks - these bricks don’t move at all
   * Falling bricks - the player can only stand on these bricks for a limited amount of time, after this the brick will fall and the player will die
   * Floating bricks - these bricks will stay on either the x or y-axis that the player places it on, but will move back-and-forth
+  * Black Hole - Once the player enters the portal from one end he directly teleports to the other end. It engulfs the player when he gets too close to it.
 * There are other types of enemies that the player may face: aliens, UFOs, meteor showers, etc.
 
