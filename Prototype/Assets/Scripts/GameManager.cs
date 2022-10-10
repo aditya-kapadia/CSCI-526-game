@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
-
-    
-
+    public sendtogform sg;
 
     public void startGame()
     {
+        sendtogform.level = 1;
+        sendtogform.startSessionID = DateTime.Now;
         SceneManager.LoadScene("Level1");
     }
 
@@ -20,12 +21,14 @@ public class GameManager : MonoBehaviour
 
     public void GotoLvlTwo()
     {
-
+        sendtogform.level = 2;
+        sendtogform.startSessionID = DateTime.Now;
         SceneManager.LoadScene("Level2");
     }
     public void GotoLvlThree()
     {
-
+        sendtogform.level = 3;
+        sendtogform.startSessionID = DateTime.Now;
         SceneManager.LoadScene("Level3");
     }
     public void GotoMainMenu()
