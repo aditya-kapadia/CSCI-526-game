@@ -7,7 +7,8 @@ using System;
 
 public class sendtogform : MonoBehaviour{
     // Session_Id
-    long sessionID;
+    DateTime sessionID;
+    public static DateTime startSessionID;
     // Brick_Count
     int brickCount;
     int attempts;
@@ -30,7 +31,11 @@ public class sendtogform : MonoBehaviour{
         Debug.Log("FD:"+falldeath);
         Debug.Log("ED:"+enemydeath);
         
-        sessionID = DateTime.Now.Ticks;
+        sessionID = DateTime.Now;
+        TimeSpan diff = sessionID - startSessionID;
+        double seconds = diff.TotalSeconds;
+        Debug.Log("Seconds:"+seconds);
+        // Debug.Log("Time in each level:"+(sessionID.SubtractstartSessionID).Seconds);
         brickCount = MovePlatform.platformsUsed;
         Debug.Log("BC:"+brickCount);
         attempts = DeathScript.attempts;
@@ -40,10 +45,10 @@ public class sendtogform : MonoBehaviour{
         Debug.Log("Send");
         deathbyfall.deaths=0;
         deathbycollision.deaths=0;
-        StartCoroutine(Post(sessionID.ToString(),brickCount.ToString(), attempts.ToString(), level.ToString(), collectables.ToString(), enemydeath.ToString(), falldeath.ToString()));
+        StartCoroutine(Post(sessionID.ToString(),brickCount.ToString(), attempts.ToString(), level.ToString(), collectables.ToString(), enemydeath.ToString(), falldeath.ToString(), seconds.ToString()));
     }
 
-    IEnumerator Post(string s1, string s2,string s3, string s4, string s5, string s6, string s7)
+    IEnumerator Post(string s1, string s2,string s3, string s4, string s5, string s6, string s7, string s8)
     {
         Debug.Log("Post");
         WWWForm form = new WWWForm();
@@ -52,10 +57,10 @@ public class sendtogform : MonoBehaviour{
         form.AddField("entry.1830174599",s2);
         form.AddField("entry.559368451",s3);
         form.AddField("entry.1720030055",s4);
+        form.AddField("entry.953594840",s5);
         form.AddField("entry.1816916965",s6);
         form.AddField("entry.1642617224",s7);
-         
-        form.AddField("entry.953594840",s5);
+        form.AddField("entry.86693865",s8);        
         UnityWebRequest www = UnityWebRequest.Post(URL,form);
         yield return www.SendWebRequest();
         www.Dispose();
