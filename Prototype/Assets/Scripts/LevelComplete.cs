@@ -26,6 +26,7 @@ public class LevelComplete : MonoBehaviour
     public void QuitToMainMenu()
     {
         SceneManager.LoadScene("Mainmenu");
+        Time.timeScale = 1f;
     }
 
 }
