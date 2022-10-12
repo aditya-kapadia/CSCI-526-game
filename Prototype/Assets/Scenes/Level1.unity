@@ -511,7 +511,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 223755593}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: startGame
+        m_MethodName: GotoMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1079,7 +1079,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 458316171}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: startGame
+        m_MethodName: GotoLvlSelector
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
