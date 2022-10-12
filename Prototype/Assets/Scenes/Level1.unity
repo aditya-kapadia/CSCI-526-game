@@ -549,7 +549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c49022ff2c1d45c7861c9c38928d8a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1f80b3881ec149b595971d3389f4940, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4552,11 +4552,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7693863680994507772, guid: a8d5f7bf472074616b753c371bc07500, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5.12
+      value: 7.25
       objectReference: {fileID: 0}
     - target: {fileID: 7693863680994507772, guid: a8d5f7bf472074616b753c371bc07500, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.12
+      value: 7.52
       objectReference: {fileID: 0}
     - target: {fileID: 7693863680994507773, guid: a8d5f7bf472074616b753c371bc07500, type: 3}
       propertyPath: m_Name
