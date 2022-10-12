@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
         sendtogform.level = 1;
         sendtogform.startSessionID = DateTime.Now;
         SceneManager.LoadScene("Level1");
+        Time.timeScale = 1f;
     }
 
     public void GotoLvlSelector() {
