@@ -12,7 +12,7 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        string[] coinSummary = collectablesText.text.Split(" /");
+        string[] coinSummary = GameObject.FindWithTag("Collectables Text").GetComponent<Text>().text.Split(" /");
         double avgCoinsCollected = double.Parse(coinSummary[0]) / double.Parse(coinSummary[1]);
         if (avgCoinsCollected >= 1/3 && other.gameObject.CompareTag("Goal"))
         {

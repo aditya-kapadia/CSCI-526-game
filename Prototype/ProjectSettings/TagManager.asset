@@ -12,6 +12,7 @@ TagManager:
   - InBuildMode
   - InPlayMode
   - BlackHole
+  - Collectables Text
   layers:
   - Default
   - TransparentFX
