@@ -731,6 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelComplete: {fileID: 536707042}
+  collectablesText: {fileID: 1192413886}
 --- !u!114 &193611981
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelComplete: {fileID: 1090780047}
+  collectablesText: {fileID: 1192413886}
 --- !u!114 &193611981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2439,6 +2440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelComplete: {fileID: 1090780047}
+  collectablesText: {fileID: 0}
 --- !u!61 &1056115909
 BoxCollider2D:
   m_ObjectHideFlags: 0

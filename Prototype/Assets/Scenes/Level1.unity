@@ -3307,6 +3307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelComplete: {fileID: 1090780047}
+  collectablesText: {fileID: 660034944}
 --- !u!1 &1273339099
 GameObject:
   m_ObjectHideFlags: 0
