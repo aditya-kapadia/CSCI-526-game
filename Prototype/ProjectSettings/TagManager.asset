@@ -13,6 +13,9 @@ TagManager:
   - InPlayMode
   - BlackHole
   - Collectables Text
+  - Start
+  - FallingPlatform
+  - Death
   layers:
   - Default
   - TransparentFX
@@ -49,6 +52,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Platform
+    uniqueID: 1600312749
     locked: 0
   - name: Flickering
     uniqueID: 1132228403

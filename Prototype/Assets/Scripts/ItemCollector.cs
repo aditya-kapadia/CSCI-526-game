@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int collectables = 0;
-public static int gfromcollectable = 0;
+    public static int collectables = 0;
+    public static int gfromcollectable = 0;
     [SerializeField] private Text collectablesText;
-
     [SerializeField] private Text totalCollectablesText;
 
     // Start is called before the first frame update
@@ -30,7 +29,7 @@ public static int gfromcollectable = 0;
             collectables++;
             gfromcollectable++;
             collectablesText.text = collectables + " / " + totalCollectablesText.text;
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }
