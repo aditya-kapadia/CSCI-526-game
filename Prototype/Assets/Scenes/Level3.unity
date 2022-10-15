@@ -372,7 +372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 302.7, y: -141.2}
+  m_AnchoredPosition: {x: 299, y: -277}
   m_SizeDelta: {x: 50, y: 55.005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62102687
@@ -1216,7 +1216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -34, y: 117}
+  m_AnchoredPosition: {x: -20, y: 85}
   m_SizeDelta: {x: 800, y: 451.00983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355414241
@@ -3068,6 +3068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelComplete: {fileID: 536707042}
+  collectablesText: {fileID: 0}
 --- !u!1 &1060649542
 GameObject:
   m_ObjectHideFlags: 0
