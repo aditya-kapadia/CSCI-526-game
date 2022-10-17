@@ -32,4 +32,10 @@ public class LevelComplete : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void restartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       
+    }
+
 }
