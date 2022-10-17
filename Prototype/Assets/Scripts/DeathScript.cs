@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DeathScript : MonoBehaviour
 {
     public GameObject startPoint;
-    public GameObject Player;
+    //public GameObject Death;
+    [SerializeField] private Text collectablesText;
+    [SerializeField] private Text totalCollectablesText;
+    [SerializeField] private GameObject[] collectables;
+    [SerializeField] private GameObject[] platforms;
+
+
 
     public static int attempts = 0;
     // Start is called before the first frame update
@@ -23,14 +30,36 @@ public class DeathScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Death"))
         {
             attempts += 1;
             ItemCollector.gfromcollectable = 0;
-            Debug.Log("Attempts: "+attempts);
-            MovePlatform.platformsUsed = 0;
-            //Player.transform.position = startPoint.transform.position;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            // Move player back to start
+            transform.position = startPoint.transform.position;
+
+            // Reactivate all collectables
+            foreach (GameObject collectable in collectables)
+            {
+                collectable.SetActive(true);
+            }
+
+            // Reset collectable counter
+            ItemCollector.collectables = 0;
+            collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
+
+            // Make platforms moveable again
+            foreach (GameObject platform in platforms)
+            {
+                platform.GetComponent<MovePlatform>().enabled = true;
+                // Bring back falling platforms
+                if (platform.CompareTag("FallingPlatform"))
+                {
+                    platform.SetActive(true);
+                    platform.GetComponent<FallingPlatform>().StopFall();
+                }
+            }
+
 
         }
     }

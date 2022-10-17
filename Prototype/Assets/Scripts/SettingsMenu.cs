@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 using System;
 public class SettingsMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject Settings_menu;
 
+    // Start is called before the first frame update
     private void Start()
     {
-        Settings_menu.SetActive(false);
+
     }
-    [SerializeField] GameObject Settings_menu;
+
     public void settings_open() {
         Settings_menu.SetActive(true);
         Time.timeScale = 0f;
@@ -27,6 +28,13 @@ public class SettingsMenu : MonoBehaviour
     {
 
         SceneManager.LoadScene("Mainmenu");
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        Settings_menu.SetActive(false);
+
     }
 
 }

@@ -13,6 +13,7 @@ public class LevelComplete : MonoBehaviour
         MovePlatform.platformsUsed = 0;
         DeathScript.attempts = 0;
         ItemCollector.gfromcollectable = 0;
+        ItemCollector.collectables = 0;
         sendtogform.level += 1;
         gameObject.SetActive(true);
     }
