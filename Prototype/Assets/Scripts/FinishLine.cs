@@ -14,10 +14,10 @@ public class FinishLine : MonoBehaviour
     {
         string[] coinSummary = GameObject.FindWithTag("Collectables Text").GetComponent<Text>().text.Split(" /");
         double avgCoinsCollected = double.Parse(coinSummary[0]) / double.Parse(coinSummary[1]);
-        if (avgCoinsCollected >= 1/3 && other.gameObject.CompareTag("Goal"))
+        if (avgCoinsCollected >= 0.1 && other.gameObject.CompareTag("Goal"))
         {
             Time.timeScale = 0f;
-            LevelComplete.Setup();
+            LevelComplete.Setup(avgCoinsCollected);
 
 
         }

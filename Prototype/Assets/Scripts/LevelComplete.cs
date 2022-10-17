@@ -7,7 +7,7 @@ using System;
 public class LevelComplete : MonoBehaviour
 {
     public sendtogform sg;
-    public void Setup()
+    public void Setup(double avgCoinsCollected)
     {
         sg.Send();
         MovePlatform.platformsUsed = 0;
@@ -15,6 +15,8 @@ public class LevelComplete : MonoBehaviour
         ItemCollector.gfromcollectable = 0;
         ItemCollector.collectables = 0;
         sendtogform.level += 1;
+        // Debug.Log(avgCoinsCollected);
+        GetComponent<starsHandler>().starsAchieved(avgCoinsCollected);
         gameObject.SetActive(true);
     }
 
@@ -28,6 +30,12 @@ public class LevelComplete : MonoBehaviour
     {
         SceneManager.LoadScene("Mainmenu");
         Time.timeScale = 1f;
+    }
+
+    public void restartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       
     }
 
 }
