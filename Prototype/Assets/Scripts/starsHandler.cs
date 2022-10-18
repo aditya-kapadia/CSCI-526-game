@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class starsHandler : MonoBehaviour
 {
     public GameObject[] stars;
     public GameObject nextButton;
     public ItemCollector collectorObj;
+
+    [SerializeField] private Text levelNumber;
     // Use this for initialization
     void Start()
     {
@@ -20,13 +23,14 @@ public class starsHandler : MonoBehaviour
 
 
 
-    public void starsAchieved(double avgCoinsCollected)
+    public void starsAchieved(double avgCoinsCollected, int level)
     {
-
+        levelNumber.text = "" + level + "";
         avgCoinsCollected = avgCoinsCollected * 100;
         if (avgCoinsCollected >= 33f && avgCoinsCollected < 66)
         {
             stars[0].SetActive(true);
+            nextButton.SetActive(true);
         }
 
         else if (avgCoinsCollected >= 66 && avgCoinsCollected < 70)

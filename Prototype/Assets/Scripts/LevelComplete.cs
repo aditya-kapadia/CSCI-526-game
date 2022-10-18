@@ -16,7 +16,7 @@ public class LevelComplete : MonoBehaviour
         ItemCollector.collectables = 0;
         sendtogform.level += 1;
         // Debug.Log(avgCoinsCollected);
-        GetComponent<starsHandler>().starsAchieved(avgCoinsCollected);
+        GetComponent<starsHandler>().starsAchieved(avgCoinsCollected,sendtogform.level);
         gameObject.SetActive(true);
     }
 
