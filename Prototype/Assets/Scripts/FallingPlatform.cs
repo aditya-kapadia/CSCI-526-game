@@ -28,7 +28,6 @@ public class FallingPlatform : MonoBehaviour
 
     public void StopFall()
     {
-        Debug.Log("stopping fall");
         StopAllCoroutines();
         falling = false;
         rb.bodyType = RigidbodyType2D.Static;
@@ -46,6 +45,13 @@ public class FallingPlatform : MonoBehaviour
         }
         if (falling == false)
             StartCoroutine(Fall());
+    }
+
+    public void TriggerFall()
+    {
+        if (falling == false)
+            StartCoroutine(Fall());
+
     }
 
     private IEnumerator Fall()

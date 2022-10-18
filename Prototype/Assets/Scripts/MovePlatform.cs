@@ -19,6 +19,7 @@ public class MovePlatform : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Script Enabled");
         scriptEnabled = true;
         platformMoved = false;
     }
@@ -77,6 +78,18 @@ public class MovePlatform : MonoBehaviour
 
             if (platformMoved)
             {
+
+                // Disable platform movement if user placed platform directly under player sprite
+                Collider2D platformCollider = gameObject.GetComponent<Collider2D>();
+                Collider2D playerCollider = GameObject.FindWithTag("Player").GetComponent<Collider2D>();
+                if (platformCollider.IsTouching(playerCollider))
+                {
+                    gameObject.GetComponent<MovePlatform>().enabled = false;
+                    if (gameObject.CompareTag("FallingPlatform"))
+                        gameObject.GetComponent<FallingPlatform>().TriggerFall();
+                }
+
+                // Adjust platform count
                 platformsLeft = int.Parse(PlatformCountText.text);
 
 
@@ -94,8 +107,6 @@ public class MovePlatform : MonoBehaviour
                     {
                         otherAnimator.StopPlayback();
                         otherAnimator.enabled = false;
-                        //GameObject playButton = GameObject.FindWithTag("InBuildMode");
-                        //playButton.GetComponent<BlinkPulse>().enabled = true;
                     }
                     return;
                 }
@@ -107,8 +118,8 @@ public class MovePlatform : MonoBehaviour
                 platformsLeft--;
                 PlatformCountText.text = platformsLeft.ToString();
                 platformsUsed++;
+
             }
         }
-        
     }
 }
