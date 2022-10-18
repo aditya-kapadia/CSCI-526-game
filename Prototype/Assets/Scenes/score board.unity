@@ -1155,6 +1155,7 @@ MonoBehaviour:
   - {fileID: 1031003041}
   - {fileID: 32591204}
   - {fileID: 2125359020}
+  nextButton: {fileID: 0}
   collectorObj: {fileID: 0}
 --- !u!1 &2125359020
 GameObject:

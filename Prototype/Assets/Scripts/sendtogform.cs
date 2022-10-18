@@ -9,6 +9,7 @@ public class sendtogform : MonoBehaviour{
     // Session_Id
     DateTime sessionID;
     public static DateTime startSessionID;
+    public static DateTime pauseTime;
     // Brick_Count
     int brickCount;
     int attempts;
@@ -28,21 +29,21 @@ public class sendtogform : MonoBehaviour{
     {
         falldeath = deathbyfall.deaths;
         enemydeath = deathbycollision.deaths;
-        Debug.Log("FD:"+falldeath);
-        Debug.Log("ED:"+enemydeath);
+        // Debug.Log("FD:"+falldeath);
+        // Debug.Log("ED:"+enemydeath);
         
         sessionID = DateTime.Now;
         TimeSpan diff = sessionID - startSessionID;
-        double seconds = diff.TotalSeconds;
-        Debug.Log("Seconds:"+seconds);
+        double seconds = Math.Abs(diff.Seconds - SettingsMenu.pauseTime.Seconds);
+        // Debug.Log("Seconds:"+seconds);
         // Debug.Log("Time in each level:"+(sessionID.SubtractstartSessionID).Seconds);
         brickCount = MovePlatform.platformsUsed;
-        Debug.Log("BC:"+brickCount);
+        // Debug.Log("BC:"+brickCount);
         attempts = DeathScript.attempts;
-        Debug.Log("Attempts in sendform:"+attempts);
-            attempts++;
+        // Debug.Log("Attempts in sendform:"+attempts);
+        attempts++;
         collectables = ItemCollector.gfromcollectable;
-        Debug.Log("Send");
+        // Debug.Log("Send");
         deathbyfall.deaths=0;
         deathbycollision.deaths=0;
         StartCoroutine(Post(sessionID.Ticks.ToString(),brickCount.ToString(), attempts.ToString(), level.ToString(), collectables.ToString(), enemydeath.ToString(), falldeath.ToString(), seconds.ToString()));
