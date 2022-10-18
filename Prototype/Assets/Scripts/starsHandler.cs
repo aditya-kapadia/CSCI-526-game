@@ -24,7 +24,7 @@ public class starsHandler : MonoBehaviour
     {
 
         avgCoinsCollected = avgCoinsCollected * 100;
-        if (avgCoinsCollected >= 33f && avgCoinsCollected < 66)
+        if (avgCoinsCollected < 66)
         {
             stars[0].SetActive(true);
         }
