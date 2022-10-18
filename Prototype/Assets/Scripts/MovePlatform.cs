@@ -19,7 +19,6 @@ public class MovePlatform : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Script Enabled");
         scriptEnabled = true;
         platformMoved = false;
     }
