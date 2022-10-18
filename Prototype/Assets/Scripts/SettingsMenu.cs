@@ -7,6 +7,8 @@ public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] GameObject Settings_menu;
 
+    public DateTime startPause;
+    public static TimeSpan pauseTime = TimeSpan.FromSeconds(0.0);
     // Start is called before the first frame update
     private void Start()
     {
@@ -14,6 +16,8 @@ public class SettingsMenu : MonoBehaviour
     }
 
     public void settings_open() {
+        startPause = DateTime.Now;
+        // Debug.Log("Start:"+pauseTime.Seconds);
         Settings_menu.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -33,6 +37,8 @@ public class SettingsMenu : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        pauseTime += DateTime.Now - startPause;
+        // Debug.Log("PauseTime:"+pauseTime.Seconds);
         Settings_menu.SetActive(false);
 
     }
