@@ -333,7 +333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0009460449, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0.0009765625, y: 0}
   m_SizeDelta: {x: -0.0020142, y: 0.000030518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &119886263
@@ -2164,7 +2164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Size.y
-      value: 0.24231648
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Enabled
@@ -2172,7 +2172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Offset.y
-      value: 0.008914351
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
@@ -3418,7 +3418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Size.y
-      value: 0.21706879
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Enabled
@@ -3426,7 +3426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Offset.y
-      value: 0.024490297
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6901761420376607768, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
@@ -4911,7 +4911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.76286316}
+  m_AnchoredPosition: {x: 0, y: -0.7628784}
   m_SizeDelta: {x: 0, y: 1.5259608}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1505154990

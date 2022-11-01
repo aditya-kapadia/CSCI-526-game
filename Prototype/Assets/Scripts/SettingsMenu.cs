@@ -24,13 +24,19 @@ public class SettingsMenu : MonoBehaviour
 
     public void GotoLvlSelector()
     {
-
+        MovePlatform.platformsUsed = 0;
+        DeathScript.attempts = 0;
+        ItemCollector.gfromcollectable = 0;
+        ItemCollector.collectables = 0;
         SceneManager.LoadScene("LevelSelectionMenu");
     }
 
     public void GotoMainMenu()
     {
-
+        MovePlatform.platformsUsed = 0;
+        DeathScript.attempts = 0;
+        ItemCollector.gfromcollectable = 0;
+        ItemCollector.collectables = 0;
         SceneManager.LoadScene("Mainmenu");
     }
 
