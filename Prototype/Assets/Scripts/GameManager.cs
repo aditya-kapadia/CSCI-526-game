@@ -5,7 +5,6 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    public sendtogform sg;
 
     public void startGame()
     {

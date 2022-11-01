@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class HintMenu : MonoBehaviour
 {
     public GameObject hintMenu;
     // Start is called before the first frame update

@@ -30,15 +30,17 @@ public class BlackHole : MonoBehaviour
         if (playerCollide)
         {
             player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            Vector3 direction =  transform.position - player.transform.position;
+            // Subtract Vector3(0, 0.75f, 0) to account for player sprite offset from
+            // center of black hole in y direction
+            Vector3 direction =  transform.position - player.transform.position - new Vector3(0, 0.75f, 0);
             direction = Quaternion.Euler(0, 0, 80) * direction;
             float distanceThisFrame = spinSpeed * Time.deltaTime ;
 
             player.transform.Translate(direction.normalized * distanceThisFrame, Space.World);
 
             // Player is close enough to center
-            if (Mathf.Abs(transform.position.x - player.transform.position.x) < 0.2
-                && Mathf.Abs(transform.position.y - player.transform.position.y) < 0.2)
+            if (Mathf.Abs(transform.position.x - player.transform.position.x) < 0.25
+                && Mathf.Abs(transform.position.y - player.transform.position.y - 0.75f) < 0.25)
             {
                 StartCoroutine(SendThroughPortal());                
             }

@@ -21,7 +21,7 @@ public class StablePlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject.GetComponent("MovePlatform"));
+            gameObject.GetComponent<MovePlatform>().enabled = false;
         }
     }
 
