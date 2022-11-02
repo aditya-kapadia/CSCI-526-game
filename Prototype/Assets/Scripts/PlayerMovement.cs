@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D rb;
     public Animator animator;
+    public Animator playerAnimation;
     public LayerMask groundLayer;
 
     [Header("Physics")]
@@ -30,6 +31,12 @@ public class PlayerMovement : MonoBehaviour
     public float groundLength = 1.2f;
     public Vector3 colliderOffset;
 
+    void Start()
+    {
+        playerAnimation = GetComponent<Animator>();
+        playerAnimation.SetBool("OnGround", true);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -40,9 +47,18 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jumpTimer = Time.time + jumpDelay;
+            //playerAnimation = GetComponent<Animator>();
+            playerAnimation.SetBool("OnGround", false);
+        }
+        else
+        {
+            //playerAnimation = GetComponent<Animator>();
+            playerAnimation.SetBool("OnGround", true);
         }
 
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        
 
     }
     void FixedUpdate()
