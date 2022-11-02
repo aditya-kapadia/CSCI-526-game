@@ -39,8 +39,8 @@ public class BlackHole : MonoBehaviour
             player.transform.Translate(direction.normalized * distanceThisFrame, Space.World);
 
             // Player is close enough to center
-            if (Mathf.Abs(transform.position.x - player.transform.position.x) < 0.25
-                && Mathf.Abs(transform.position.y - player.transform.position.y - 0.75f) < 0.25)
+            if (Mathf.Abs(transform.position.x - player.transform.position.x) < 0.35
+                && Mathf.Abs(transform.position.y - player.transform.position.y - 0.75f) < 0.35)
             {
                 StartCoroutine(SendThroughPortal());                
             }
