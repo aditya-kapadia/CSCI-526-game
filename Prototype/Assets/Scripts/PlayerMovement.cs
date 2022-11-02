@@ -47,10 +47,12 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jumpTimer = Time.time + jumpDelay;
+            //playerAnimation = GetComponent<Animator>();
             playerAnimation.SetBool("OnGround", false);
         }
         else
         {
+            //playerAnimation = GetComponent<Animator>();
             playerAnimation.SetBool("OnGround", true);
         }
 
