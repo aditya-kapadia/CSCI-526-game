@@ -37,8 +37,12 @@ public class MovePlatform : MonoBehaviour
         if (scriptEnabled)
         {
 
-            // First delete example mouse
-            Destroy(GameObject.FindWithTag("Cursor"));
+            // First delete demo cursor and platform
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Demo"))
+            {
+                Destroy(obj);
+            }
+
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
             offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
