@@ -16,6 +16,7 @@ TagManager:
   - FallingPlatform
   - Death
   - Demo
+  - TipMenu
   layers:
   - Default
   - TransparentFX
