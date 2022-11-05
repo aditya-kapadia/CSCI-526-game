@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class DeathScript : MonoBehaviour
+public class DeathScript2 : MonoBehaviour
 {
     public GameObject startPoint;
     //public GameObject Death;
@@ -12,7 +12,7 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private Text totalCollectablesText;
     [SerializeField] private GameObject[] collectables;
     [SerializeField] private GameObject[] platforms;
-    //[SerializeField] private GameObject TipMenu;
+    [SerializeField] private GameObject TipMenu;
 
 
 
@@ -61,9 +61,9 @@ public class DeathScript : MonoBehaviour
                 }
             }
 
-            //if (attempts == 1) {
-                //TipMenu.SetActive(true);
-            //}
+            if (attempts == 1) {
+                TipMenu.SetActive(true);
+            }
 
         }
     }
