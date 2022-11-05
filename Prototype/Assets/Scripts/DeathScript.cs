@@ -12,6 +12,7 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private Text totalCollectablesText;
     [SerializeField] private GameObject[] collectables;
     [SerializeField] private GameObject[] platforms;
+    [SerializeField] private GameObject TipMenu;
 
 
 
@@ -28,7 +29,7 @@ public class DeathScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Death"))
         {
@@ -60,6 +61,9 @@ public class DeathScript : MonoBehaviour
                 }
             }
 
+            if (attempts == 1) {
+                TipMenu.SetActive(true);
+            }
 
         }
     }
