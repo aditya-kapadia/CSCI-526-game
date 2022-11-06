@@ -93,17 +93,14 @@ public class MovePlatform : MonoBehaviour
                 }
 
                 // Adjust platform count
-                if(PlatformCountText.text == "") return;
-                string[] words = PlatformCountText.text.Split('x');
-                platformsLeft = int.Parse(words[1]);
+                platformsLeft = int.Parse(PlatformCountText.text);
 
 
                 if (platformsLeft == 1)
                 {
                     platformsLeft--;
                     platformsUsed++;
-                    // PlatformCountText.text ="x"+ platformsLeft.ToString();
-                    PlatformCountText.text = "";
+                    PlatformCountText.text = platformsLeft.ToString();
                     if (target == null)
                     {
                         return;
@@ -118,11 +115,11 @@ public class MovePlatform : MonoBehaviour
                 }
 
                 if (platformsLeft == 0)
-                {   PlatformCountText.text = "";
+                {
                     return;
                 }
                 platformsLeft--;
-                PlatformCountText.text = "x" + platformsLeft.ToString();
+                PlatformCountText.text = platformsLeft.ToString();
                 platformsUsed++;
 
             }
