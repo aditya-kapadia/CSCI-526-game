@@ -47,12 +47,10 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jumpTimer = Time.time + jumpDelay;
-            //playerAnimation = GetComponent<Animator>();
             playerAnimation.SetBool("OnGround", false);
         }
         else
         {
-            //playerAnimation = GetComponent<Animator>();
             playerAnimation.SetBool("OnGround", true);
         }
 
@@ -99,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Mathf.Abs(direction.x) < 0.4f || changingDirections)
             {
-                rb.drag = linearDrag;
+                rb.drag = linearDrag *0.5f;
             }
             else
             {
