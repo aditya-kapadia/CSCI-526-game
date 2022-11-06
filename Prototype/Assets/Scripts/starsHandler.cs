@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class starsHandler : MonoBehaviour
 {
     public GameObject[] stars;
     public GameObject nextButton;
     public ItemCollector collectorObj;
+    public Text text;
     // Use this for initialization
     void Start()
     {
@@ -27,6 +29,7 @@ public class starsHandler : MonoBehaviour
         if (avgCoinsCollected < 33)
         {
             Debug.Log("I have zero stars");
+            text.text = "Not Enough Coins";
            //# stars[0].SetActive(true);
         }
         else if (avgCoinsCollected >= 33 && avgCoinsCollected < 66)
