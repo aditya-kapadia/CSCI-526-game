@@ -17,6 +17,7 @@ TagManager:
   - Death
   - Demo
   - TipMenu
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
