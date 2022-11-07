@@ -12,7 +12,7 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private Text totalCollectablesText;
     [SerializeField] private GameObject[] collectables;
     [SerializeField] private GameObject[] platforms;
-
+    [SerializeField] private GameObject[] flyingground;
 
 
     public static int attempts = 0;
@@ -59,6 +59,17 @@ public class DeathScript : MonoBehaviour
                     platform.GetComponent<FallingPlatform>().StopFall();
                 }
             }
+
+            // foreach (GameObject fg in flyingground)
+            // {
+            //     // Bring back falling platforms
+            //     Debug.Log(trans);
+            //     if (fg.CompareTag("Ground"))
+            //     {
+            //         fg.SetActive(true);
+            //         // fg.GetComponent<Ground>().StopFall();
+            //     }
+            // }
 
 
         }
