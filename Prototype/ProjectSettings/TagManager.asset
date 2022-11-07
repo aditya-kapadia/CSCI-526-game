@@ -7,7 +7,6 @@ TagManager:
   - Platform
   - Collectable
   - Ground
-  - Cursor
   - Goal
   - InBuildMode
   - InPlayMode
@@ -16,6 +15,8 @@ TagManager:
   - Start
   - FallingPlatform
   - Death
+  - Demo
+  - TipMenu
   layers:
   - Default
   - TransparentFX
