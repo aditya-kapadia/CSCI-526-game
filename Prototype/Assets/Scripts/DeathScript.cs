@@ -50,6 +50,8 @@ public class DeathScript : MonoBehaviour
             ItemCollector.collectables = 0;
             collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
 
+            
+
             // Make platforms moveable again
             foreach (GameObject platform in platforms)
             {
@@ -61,24 +63,23 @@ public class DeathScript : MonoBehaviour
                     platform.GetComponent<FallingPlatform>().StopFall();
                 }
             }
-            
+
             int count = 0;
             foreach (GameObject fg in flyingground)
             {
-                // Bring back falling platforms
+                // Bring back flying platforms
                 Debug.Log(fg);
                 if (fg.CompareTag("Ground"))
                 {
-                    fg.SetActive(true);
+                    // fg.SetActive(true);
                     fg.transform.position = FG[count].transform.position;
                     rb[count].bodyType = RigidbodyType2D.Kinematic;
                     count += 1;
-                    
                     // fg.GetComponent<Ground>().StopFall();
                 }
             }
-
-
+            
+            
         }
     }
 }
