@@ -4,17 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class DeathScript : MonoBehaviour
+public class DeathScript2 : MonoBehaviour
 {
     public GameObject startPoint;
-    public GameObject[] FG;
-    public Rigidbody2D[] rb;
     //public GameObject Death;
     [SerializeField] private Text collectablesText;
     [SerializeField] private Text totalCollectablesText;
     [SerializeField] private GameObject[] collectables;
     [SerializeField] private GameObject[] platforms;
-    [SerializeField] private GameObject[] flyingground;
+    [SerializeField] private GameObject TipMenu;
+
 
 
     public static int attempts = 0;
@@ -50,8 +49,6 @@ public class DeathScript : MonoBehaviour
             ItemCollector.collectables = 0;
             collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
 
-            
-
             // Make platforms moveable again
             foreach (GameObject platform in platforms)
             {
@@ -64,22 +61,10 @@ public class DeathScript : MonoBehaviour
                 }
             }
 
-            int count = 0;
-            foreach (GameObject fg in flyingground)
-            {
-                // Bring back flying platforms
-                Debug.Log(fg);
-                if (fg.CompareTag("Ground"))
-                {
-                    // fg.SetActive(true);
-                    fg.transform.position = FG[count].transform.position;
-                    rb[count].bodyType = RigidbodyType2D.Kinematic;
-                    count += 1;
-                    // fg.GetComponent<Ground>().StopFall();
-                }
+            if (attempts == 1) {
+                TipMenu.SetActive(true);
             }
-            
-            
+
         }
     }
 }
