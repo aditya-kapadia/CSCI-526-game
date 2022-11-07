@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class DeathScript : MonoBehaviour
 {
     public GameObject startPoint;
+    public GameObject[] FG;
+    public Rigidbody2D[] rb;
     //public GameObject Death;
     [SerializeField] private Text collectablesText;
     [SerializeField] private Text totalCollectablesText;
@@ -59,17 +61,22 @@ public class DeathScript : MonoBehaviour
                     platform.GetComponent<FallingPlatform>().StopFall();
                 }
             }
-
-            // foreach (GameObject fg in flyingground)
-            // {
-            //     // Bring back falling platforms
-            //     Debug.Log(trans);
-            //     if (fg.CompareTag("Ground"))
-            //     {
-            //         fg.SetActive(true);
-            //         // fg.GetComponent<Ground>().StopFall();
-            //     }
-            // }
+            
+            int count = 0;
+            foreach (GameObject fg in flyingground)
+            {
+                // Bring back falling platforms
+                Debug.Log(fg);
+                if (fg.CompareTag("Ground"))
+                {
+                    fg.SetActive(true);
+                    fg.transform.position = FG[count].transform.position;
+                    rb[count].bodyType = RigidbodyType2D.Kinematic;
+                    count += 1;
+                    
+                    // fg.GetComponent<Ground>().StopFall();
+                }
+            }
 
 
         }

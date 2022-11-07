@@ -16,6 +16,7 @@ TagManager:
   - FallingPlatform
   - Death
   - Demo
+  - FG1
   layers:
   - Default
   - TransparentFX

@@ -773,6 +773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1184985475}
+  FG: []
+  rb: []
   collectablesText: {fileID: 1192413886}
   totalCollectablesText: {fileID: 1662255966}
   collectables:
@@ -784,6 +786,7 @@ MonoBehaviour:
   platforms:
   - {fileID: 1712250052}
   - {fileID: 380211379}
+  flyingground: []
 --- !u!95 &193611988
 Animator:
   serializedVersion: 4
