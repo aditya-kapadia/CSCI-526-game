@@ -18,6 +18,8 @@ TagManager:
   - Demo
   - TipMenu
   - SpawnPoint
+  - Shield
+  - Meteor
   layers:
   - Default
   - TransparentFX
