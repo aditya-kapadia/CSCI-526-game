@@ -12,6 +12,9 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private Text totalCollectablesText;
     [SerializeField] private GameObject[] collectables;
     [SerializeField] private GameObject[] platforms;
+    [SerializeField] private GameObject spawner;
+    [SerializeField] private GameObject playerShield;
+
     //[SerializeField] private GameObject TipMenu;
 
 
@@ -33,38 +36,79 @@ public class DeathScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Death"))
         {
-            attempts += 1;
-            ItemCollector.gfromcollectable = 0;
-
-            // Move player back to start
-            transform.position = startPoint.transform.position;
-
-            // Reactivate all collectables
-            foreach (GameObject collectable in collectables)
-            {
-                collectable.SetActive(true);
-            }
-
-            // Reset collectable counter
-            ItemCollector.collectables = 0;
-            collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
-
-            // Make platforms moveable again
-            foreach (GameObject platform in platforms)
-            {
-                platform.GetComponent<MovePlatform>().enabled = true;
-                // Bring back falling platforms
-                if (platform.CompareTag("FallingPlatform"))
-                {
-                    platform.SetActive(true);
-                    platform.GetComponent<FallingPlatform>().StopFall();
-                }
-            }
-
-            //if (attempts == 1) {
-                //TipMenu.SetActive(true);
-            //}
-
+            StartCoroutine(ResetLevel());
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Meteor"))
+        {
+            if (playerShield.activeSelf == false)
+            {
+                // Destroy all previously spawnd meteor game objects
+                GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
+                foreach (GameObject meteor in meteors)
+                {
+                    Destroy(meteor);
+                    spawner.GetComponent<MeteorShower>().StopMeteorShower();
+
+                }
+
+                StartCoroutine(ResetLevel());
+            }
+            else
+            {
+                StartCoroutine(RemoveShield());
+            }
+
+            
+        }
+    }
+
+    IEnumerator ResetLevel()
+    {
+        attempts += 1;
+        ItemCollector.gfromcollectable = 0;
+
+        // Move player back to start
+        transform.position = startPoint.transform.position;
+
+        // Reactivate all collectables
+        foreach (GameObject collectable in collectables)
+        {
+            collectable.SetActive(true);
+        }
+
+        // Reset collectable counter
+        ItemCollector.collectables = 0;
+        collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
+
+        // Make platforms moveable again
+        foreach (GameObject platform in platforms)
+        {
+            platform.GetComponent<MovePlatform>().enabled = true;
+            // Bring back falling platforms
+            if (platform.CompareTag("FallingPlatform"))
+            {
+                platform.SetActive(true);
+                platform.GetComponent<FallingPlatform>().StopFall();
+            }
+        }
+
+        yield return new WaitForSeconds(2f);
+        spawner.GetComponent<MeteorShower>().StartMeteorShower();
+    }
+
+    IEnumerator RemoveShield()
+    {
+        // Start blinking shield for 5 sec to signal to player that it will disappear soon
+        playerShield.GetComponent<ActivateShield>().BlinkShield();
+        yield return new WaitForSeconds(5f);
+
+        // Turn shield off
+        playerShield.SetActive(false);
+    }
+
+
 }
