@@ -14,6 +14,7 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private GameObject[] platforms;
     [SerializeField] private GameObject spawner;
     [SerializeField] private GameObject playerShield;
+    [SerializeField] private GameObject shieldPowerup;
 
     //[SerializeField] private GameObject TipMenu;
 
@@ -51,7 +52,6 @@ public class DeathScript : MonoBehaviour
                 foreach (GameObject meteor in meteors)
                 {
                     Destroy(meteor);
-                    spawner.GetComponent<MeteorShower>().StopMeteorShower();
 
                 }
 
@@ -62,7 +62,19 @@ public class DeathScript : MonoBehaviour
                 StartCoroutine(RemoveShield());
             }
 
-            
+
+        }
+        else if (other.gameObject.CompareTag("Death"))
+        {
+            if (playerShield)
+            {
+                if (playerShield.activeSelf == false)
+                    StartCoroutine(ResetLevel());
+                else
+                {
+                    StartCoroutine(RemoveShield());
+                }
+            }
         }
     }
 
@@ -96,8 +108,18 @@ public class DeathScript : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(2f);
-        spawner.GetComponent<MeteorShower>().StartMeteorShower();
+        // Resetting meteor shower components
+        if (playerShield)
+            playerShield.SetActive(false);
+        if (shieldPowerup)
+            shieldPowerup.SetActive(true);
+        if (spawner)
+        {
+            spawner.GetComponent<MeteorShower>().StopMeteorShower();
+            yield return new WaitForSeconds(2f);
+            spawner.GetComponent<MeteorShower>().StartMeteorShower();
+        }
+        
     }
 
     IEnumerator RemoveShield()

@@ -33,7 +33,8 @@ public class ActivateShield : MonoBehaviour
             float t = 0;
             if (Time.timeScale == 0)
             {
-                t = 0.005f;
+                //t = 0.005f;
+                t = 0;
             }
             else
             {
