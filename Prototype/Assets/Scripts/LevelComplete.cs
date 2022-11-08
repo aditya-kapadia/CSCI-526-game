@@ -27,7 +27,6 @@ public class LevelComplete : MonoBehaviour
         sendtogform.startSessionID = DateTime.Now;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1f;
-
     }
 
     public void QuitToMainMenu()
