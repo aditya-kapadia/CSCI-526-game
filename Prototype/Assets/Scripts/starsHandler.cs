@@ -42,7 +42,7 @@ public class starsHandler : MonoBehaviour
             //min_coins.enabled = false;
         }
 
-        else if (avgCoinsCollected >= 80 && avgCoinsCollected < 100)
+        else if (avgCoinsCollected > 80 && avgCoinsCollected < 100)
         {
             stars[0].SetActive(true);
             stars[1].SetActive(true);
