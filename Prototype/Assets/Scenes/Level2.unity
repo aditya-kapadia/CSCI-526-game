@@ -613,6 +613,8 @@ MonoBehaviour:
   onGround: 0
   groundLength: 0.1
   colliderOffset: {x: 0.3, y: 0, z: 0}
+  restController: {fileID: 9100000, guid: badbb7aeec204443f807926e3fb8e8c6, type: 2}
+  walkController: {fileID: 9100000, guid: 41465f9f13b95f54aa04d839e97b635b, type: 2}
 --- !u!114 &193611982
 MonoBehaviour:
   m_ObjectHideFlags: 0
