@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     public RuntimeAnimatorController restController;
     public RuntimeAnimatorController walkController;
+    public RuntimeAnimatorController jumpController;
 
     void Start()
     {
@@ -82,7 +83,21 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
         }
-
+        if(onGround)
+        {
+            if (direction.x == 0)
+            {
+                playerAnimation.runtimeAnimatorController = restController;
+            }
+            else
+            {
+                playerAnimation.runtimeAnimatorController = walkController;
+            }
+        } else
+        {
+            playerAnimation.runtimeAnimatorController = jumpController;
+        }
+        /*
         if(direction.x == 0)
         {
             playerAnimation.runtimeAnimatorController = restController;
@@ -90,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimation.runtimeAnimatorController = walkController;
         }
+        */
         //animator.SetFloat("horizontal", Mathf.Abs(rb.velocity.x));
     }
     void Jump()
