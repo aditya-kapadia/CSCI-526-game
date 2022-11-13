@@ -12,7 +12,6 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -31,5 +30,12 @@ public class EnemyMovement : MonoBehaviour
                 index++;
             }
         }
+    }
+
+    public void UpdatePositions()
+    {
+        positions[0] = gameObject.transform.position;
+        positions[1] = gameObject.transform.position;
+        positions[1].y = positions[1].y + 0.25f;
     }
 }

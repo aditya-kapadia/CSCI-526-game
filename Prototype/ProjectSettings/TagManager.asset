@@ -20,6 +20,7 @@ TagManager:
   - SpawnPoint
   - Shield
   - Meteor
+  - PowerUp
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,8 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private GameObject playerShield;
     [SerializeField] private GameObject shieldPowerup;
 
+    private bool removingShield;
+
     //[SerializeField] private GameObject TipMenu;
 
 
@@ -24,7 +26,7 @@ public class DeathScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        removingShield = false;
     }
 
     // Update is called once per frame
@@ -64,6 +66,7 @@ public class DeathScript : MonoBehaviour
 
 
         }
+        // If player hits enemy
         else if (other.gameObject.CompareTag("Death"))
         {
             if (playerShield)
@@ -112,7 +115,7 @@ public class DeathScript : MonoBehaviour
         if (playerShield)
             playerShield.SetActive(false);
         if (shieldPowerup)
-            shieldPowerup.SetActive(true);
+            shieldPowerup.GetComponent<ActivateShield>().ResetPowerupPosition();
         if (spawner)
         {
             spawner.GetComponent<MeteorShower>().StopMeteorShower();
@@ -124,12 +127,25 @@ public class DeathScript : MonoBehaviour
 
     IEnumerator RemoveShield()
     {
-        // Start blinking shield for 5 sec to signal to player that it will disappear soon
-        playerShield.GetComponent<ActivateShield>().BlinkShield();
-        yield return new WaitForSeconds(5f);
+        if (!removingShield)
+        {
+            removingShield = true;
 
-        // Turn shield off
-        playerShield.SetActive(false);
+            // Start blinking shield for 5 sec to signal to player that it will disappear soon
+            playerShield.GetComponent<ActivateShield>().BlinkShield();
+            yield return new WaitForSeconds(5f);
+
+            // Turn shield off
+            playerShield.GetComponent<ActivateShield>().ShieldBlinking = false;
+            playerShield.SetActive(false);
+
+            // Reinit shield powerup in random location
+            yield return new WaitForSeconds(5f);
+            shieldPowerup.GetComponent<ActivateShield>().ReinitPowerup();
+
+            removingShield = false;
+        }
+        
     }
 
 

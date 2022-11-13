@@ -6,7 +6,10 @@ using UnityEngine.UI;
 public class ActivateShield : MonoBehaviour
 {
     [SerializeField] public GameObject playerShield;
-    private bool ShieldBlinking = false;
+    [SerializeField] public GameObject shieldPowerup;
+    public Vector3[] shieldSpawnPositions;
+    public bool ShieldBlinking = false;
+    private Vector3 startPos_powerup;
     public SpriteRenderer sprite;
 
     public float minimum = 0f;
@@ -20,6 +23,7 @@ public class ActivateShield : MonoBehaviour
     void Start()
     {
         playerShield.SetActive(false);
+        startPos_powerup = shieldPowerup.transform.position;
         sprite = playerShield.GetComponent<SpriteRenderer>();
         color = sprite.color;
         a = maximum;
@@ -49,6 +53,12 @@ public class ActivateShield : MonoBehaviour
             sprite.color = color;
         }
 
+        else
+        {
+            color.a = 1f;
+            sprite.color = color;
+        }
+
     }
 
 
@@ -58,7 +68,6 @@ public class ActivateShield : MonoBehaviour
         {
             playerShield.SetActive(true);
             gameObject.SetActive(false);
-
         }
     }
 
@@ -66,5 +75,21 @@ public class ActivateShield : MonoBehaviour
     {
         ShieldBlinking = true;
     }
+
+    public void ReinitPowerup()
+    {
+        Vector3 pos = shieldSpawnPositions[Random.Range(0, shieldSpawnPositions.Length)];
+        shieldPowerup.transform.position = pos;
+        shieldPowerup.GetComponent<EnemyMovement>().UpdatePositions();
+        shieldPowerup.SetActive(true);
+    }
+
+    public void ResetPowerupPosition()
+    {
+        shieldPowerup.transform.position = startPos_powerup;
+        shieldPowerup.GetComponent<EnemyMovement>().UpdatePositions();
+        shieldPowerup.SetActive(true);
+    }
+
 
 }

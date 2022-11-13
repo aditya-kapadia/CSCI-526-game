@@ -2542,6 +2542,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShield: {fileID: 887234306}
+  shieldPowerup: {fileID: 1462724721}
+  shieldSpawnPositions: []
+  ShieldBlinking: 0
   sprite: {fileID: 975416922}
   minimum: 0
   maximum: 1
@@ -4323,7 +4326,7 @@ GameObject:
   - component: {fileID: 1462724726}
   m_Layer: 0
   m_Name: ShieldPowerup
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4434,7 +4437,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShield: {fileID: 887234306}
-  sprite: {fileID: 0}
+  shieldPowerup: {fileID: 1462724721}
+  shieldSpawnPositions:
+  - {x: -10, y: 0, z: 0}
+  - {x: 0, y: 2.15, z: 0}
+  - {x: 6.15, y: 3.5, z: 0}
+  ShieldBlinking: 0
+  sprite: {fileID: 887234308}
   minimum: 0
   maximum: 1
   cyclesPerSecond: 1
