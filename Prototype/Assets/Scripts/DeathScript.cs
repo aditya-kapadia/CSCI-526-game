@@ -46,7 +46,7 @@ public class DeathScript : MonoBehaviour
         {
             if (playerShield.activeSelf == false)
             {
-                // Destroy all previously spawnd meteor game objects
+                // Destroy all previously spawned meteor game objects
                 GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
                 foreach (GameObject meteor in meteors)
                 {
