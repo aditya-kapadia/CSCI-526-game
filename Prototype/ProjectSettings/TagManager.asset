@@ -18,6 +18,10 @@ TagManager:
   - Demo
   - FG1
   - TipMenu
+  - SpawnPoint
+  - Shield
+  - Meteor
+  - PowerUp
   layers:
   - Default
   - TransparentFX
