@@ -31,10 +31,16 @@ public class PlayerMovement : MonoBehaviour
     public float groundLength = 1.2f;
     public Vector3 colliderOffset;
 
+    public RuntimeAnimatorController restController;
+    public RuntimeAnimatorController walkController;
+    public RuntimeAnimatorController jumpController;
+
     void Start()
     {
         playerAnimation = GetComponent<Animator>();
-        playerAnimation.SetBool("OnGround", true);
+        playerAnimation.runtimeAnimatorController = restController;
+        // restController = Resources.Load("Assets/COPY SPRIGHT/2D Character - Astronaut/Animations/Player.anim") as RuntimeAnimatorController;
+        // walkController = Resources.Load("Assets/COPY SPRIGHT/2D Character - Astronaut/Animations/walk_side.anim") as RuntimeAnimatorController;
     }
 
     // Update is called once per frame
@@ -47,11 +53,6 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump"))
         {
             jumpTimer = Time.time + jumpDelay;
-            playerAnimation.SetBool("OnGround", false);
-        }
-        else
-        {
-            playerAnimation.SetBool("OnGround", true);
         }
 
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -82,6 +83,29 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
         }
+        if(onGround)
+        {
+            if (direction.x == 0)
+            {
+                playerAnimation.runtimeAnimatorController = restController;
+            }
+            else
+            {
+                playerAnimation.runtimeAnimatorController = walkController;
+            }
+        } else
+        {
+            playerAnimation.runtimeAnimatorController = jumpController;
+        }
+        /*
+        if(direction.x == 0)
+        {
+            playerAnimation.runtimeAnimatorController = restController;
+        } else
+        {
+            playerAnimation.runtimeAnimatorController = walkController;
+        }
+        */
         //animator.SetFloat("horizontal", Mathf.Abs(rb.velocity.x));
     }
     void Jump()
