@@ -10,7 +10,7 @@ public class MeteorShower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnCoroutine());
+        //StartCoroutine(SpawnCoroutine());
     }
 
     IEnumerator SpawnCoroutine()
@@ -20,7 +20,7 @@ public class MeteorShower : MonoBehaviour
         while (stopSpawning == false)
         {
             
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(10f);
             GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
             foreach (GameObject meteor in meteors)
             {
@@ -78,4 +78,5 @@ public class MeteorShower : MonoBehaviour
         stopSpawning = false;
         StartCoroutine(SpawnCoroutine());
     }
+
 }

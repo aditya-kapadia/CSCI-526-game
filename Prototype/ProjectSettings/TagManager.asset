@@ -22,6 +22,7 @@ TagManager:
   - Shield
   - Meteor
   - PowerUp
+  - FlyingPlatform
   layers:
   - Default
   - TransparentFX

@@ -78,10 +78,13 @@ public class ActivateShield : MonoBehaviour
 
     public void ReinitPowerup()
     {
-        Vector3 pos = shieldSpawnPositions[Random.Range(0, shieldSpawnPositions.Length)];
-        shieldPowerup.transform.position = pos;
-        shieldPowerup.GetComponent<EnemyMovement>().UpdatePositions();
-        shieldPowerup.SetActive(true);
+        if (!shieldPowerup.activeSelf)
+        {
+            Vector3 pos = shieldSpawnPositions[Random.Range(0, shieldSpawnPositions.Length)];
+            shieldPowerup.transform.position = pos;
+            shieldPowerup.GetComponent<EnemyMovement>().UpdatePositions();
+            shieldPowerup.SetActive(true);
+        }
     }
 
     public void ResetPowerupPosition()

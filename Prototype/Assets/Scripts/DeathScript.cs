@@ -83,6 +83,9 @@ public class DeathScript : MonoBehaviour
         attempts += 1;
         ItemCollector.gfromcollectable = 0;
 
+        StopCoroutine(RemoveShield());
+        removingShield = false;
+
         // Move player back to start
         transform.position = startPoint.transform.position;
 
@@ -106,6 +109,11 @@ public class DeathScript : MonoBehaviour
                 platform.SetActive(true);
                 platform.GetComponent<FallingPlatform>().StopFall();
             }
+            if (platform.CompareTag("FlyingPlatform"))
+            {
+                platform.SetActive(true);
+                platform.GetComponent<level4_immovable>().StopRise();
+            }
         }
 
         // Resetting meteor shower components
@@ -119,7 +127,10 @@ public class DeathScript : MonoBehaviour
             yield return new WaitForSeconds(2f);
             spawner.GetComponent<MeteorShower>().StartMeteorShower();
         }
-        
+
+        gameObject.GetComponent<PlayerMovement>().meteorShowerActive = false;
+
+
     }
 
     IEnumerator RemoveShield()
@@ -137,7 +148,7 @@ public class DeathScript : MonoBehaviour
             playerShield.SetActive(false);
 
             // Reinit shield powerup in random location
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2.5f);
             shieldPowerup.GetComponent<ActivateShield>().ReinitPowerup();
 
             removingShield = false;
