@@ -33,7 +33,7 @@ public class starsHandler : MonoBehaviour
         level_failed.enabled = false;
         if (avgCoinsCollected < 66)
         {
-            Debug.Log("I have zero stars");
+            // Debug.Log("I have zero stars");
             //text.text = "Not Enough Coins";
             level_success.enabled = false;
             level_failed.enabled = true;

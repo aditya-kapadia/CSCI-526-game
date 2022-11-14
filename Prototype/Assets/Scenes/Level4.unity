@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 50462590}
   m_Layer: 3
   m_Name: FlyingGround3
-  m_TagString: Ground
+  m_TagString: FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -830,7 +830,6 @@ GameObject:
   - component: {fileID: 193611982}
   - component: {fileID: 193611981}
   - component: {fileID: 193611980}
-  - component: {fileID: 193611987}
   - component: {fileID: 193611988}
   - component: {fileID: 193611989}
   m_Layer: 0
@@ -883,6 +882,7 @@ MonoBehaviour:
   onGround: 0
   groundLength: 0.1
   colliderOffset: {x: 0.3, y: 0, z: 0}
+  meteorShowerActive: 0
   restController: {fileID: 9100000, guid: badbb7aeec204443f807926e3fb8e8c6, type: 2}
   walkController: {fileID: 9100000, guid: 41465f9f13b95f54aa04d839e97b635b, type: 2}
   jumpController: {fileID: 9100000, guid: 99b7490ca7d3c894e81df7448bbc8d85, type: 2}
@@ -1014,32 +1014,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &193611987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193611979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58b8f9e0b9654f23959c30fdef83c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPoint: {fileID: 1184985475}
-  collectablesText: {fileID: 1192413886}
-  totalCollectablesText: {fileID: 1662255966}
-  collectables:
-  - {fileID: 1988382683}
-  - {fileID: 407716115}
-  - {fileID: 589820463}
-  - {fileID: 1336537206}
-  - {fileID: 695833413}
-  - {fileID: 471485709}
-  - {fileID: 142744885}
-  - {fileID: 131844765}
-  platforms:
-  - {fileID: 380211379}
 --- !u!95 &193611988
 Animator:
   serializedVersion: 4
@@ -1072,8 +1046,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da395315884a4734fb27250406958531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPoint: {fileID: 1184985475}
   collectablesText: {fileID: 1192413886}
   totalCollectablesText: {fileID: 1662255966}
+  collectables:
+  - {fileID: 1988382683}
+  - {fileID: 142744885}
+  - {fileID: 407716115}
+  - {fileID: 471485709}
+  - {fileID: 589820463}
+  - {fileID: 1336537206}
+  - {fileID: 695833413}
+  - {fileID: 131844765}
+  platforms:
+  - {fileID: 380211379}
+  - {fileID: 745962942}
+  - {fileID: 1615861632}
+  - {fileID: 50462583}
+  - {fileID: 219831754}
 --- !u!1 &219831754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1079,7 @@ GameObject:
   - component: {fileID: 219831761}
   m_Layer: 3
   m_Name: FlyingGround4
-  m_TagString: Ground
+  m_TagString: FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3119,7 +3109,7 @@ GameObject:
   - component: {fileID: 745962949}
   m_Layer: 3
   m_Name: FlyingGround1
-  m_TagString: Ground
+  m_TagString: FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5143,7 +5133,7 @@ GameObject:
   - component: {fileID: 1615861639}
   m_Layer: 3
   m_Name: FlyingGround2
-  m_TagString: Ground
+  m_TagString: FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5474,7 +5464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1670899496
 MonoBehaviour:
   m_ObjectHideFlags: 0

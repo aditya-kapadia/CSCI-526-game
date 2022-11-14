@@ -7,8 +7,13 @@ using UnityEngine.UI;
 public class level4_reset : MonoBehaviour
 {
        public static int attempts = 0;
+       public GameObject startPoint;
     [SerializeField] private Text collectablesText;
     [SerializeField] private Text totalCollectablesText;
+    [SerializeField] private GameObject[] collectables;
+
+    [SerializeField] private GameObject[] platforms;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +33,35 @@ public class level4_reset : MonoBehaviour
         {
              attempts += 1;
             ItemCollector.gfromcollectable = 0;
-            //  foreach (GameObject collectable in collectables)
-            // {
-            //     collectable.SetActive(true);
-            // }
+
+             // Move player back to start
+            transform.position = startPoint.transform.position;
+             foreach (GameObject collectable in collectables)
+            {
+                collectable.SetActive(true);
+            }
+
+
 
             // Reset collectable counter
             ItemCollector.collectables = 0;
             collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            foreach (GameObject platform in platforms)
+            {
+            // Bring back falling platforms
+            if (platform.CompareTag("FallingPlatform"))
+            {
+                platform.GetComponent<MovePlatform>().enabled = true;
+                platform.SetActive(true);
+                platform.GetComponent<FallingPlatform>().StopFall();
+            }
+            if (platform.CompareTag("FlyingPlatform"))
+            {
+                platform.SetActive(true);
+                platform.GetComponent<level4_immovable>().StopRise();
+            }
+            }
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
     }
