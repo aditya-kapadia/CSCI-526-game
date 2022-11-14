@@ -30,12 +30,20 @@ public class GameManager : MonoBehaviour
         sendtogform.level = 3;
         sendtogform.startSessionID = DateTime.Now;
         SceneManager.LoadScene("Level3");
+        Time.timeScale = 1f;
     }
     public void GotoLvlFour()
     {
         sendtogform.level = 4;
         sendtogform.startSessionID = DateTime.Now;
         SceneManager.LoadScene("Level4");
+        Time.timeScale = 1f;
+    }
+    public void GotoLvlFive()
+    {
+        sendtogform.level = 5;
+        sendtogform.startSessionID = DateTime.Now;
+        SceneManager.LoadScene("Level5");
         Time.timeScale = 1f;
     }
     public void GotoMainMenu()

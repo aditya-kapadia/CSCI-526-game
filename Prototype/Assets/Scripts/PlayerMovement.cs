@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public float groundLength = 1.2f;
     public Vector3 colliderOffset;
 
+    [Header("MeteorShower")]
+    public bool meteorShowerActive = false;
     public RuntimeAnimatorController restController;
     public RuntimeAnimatorController walkController;
     public RuntimeAnimatorController jumpController;
@@ -73,6 +75,18 @@ public class PlayerMovement : MonoBehaviour
     }
     void moveCharacter(float horizontal)
     {
+        if (horizontal != 0)
+        {
+            //Debug.Log("Player moved");
+            GameObject spawner = GameObject.FindGameObjectWithTag("SpawnPoint");
+            if (spawner && !meteorShowerActive)
+            {
+                meteorShowerActive = true;
+                spawner.GetComponent<MeteorShower>().StartMeteorShower();
+            }
+
+        }
+        
         rb.AddForce(Vector2.right * horizontal * moveSpeed);
 
         if((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight))

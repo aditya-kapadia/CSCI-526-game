@@ -20,7 +20,6 @@ public class FallingPlatform : MonoBehaviour
         origPos = transform.position;
     }
 
-    // Update is called once per frame
     public void UpdatePosition()
     {
         origPos = transform.position;
