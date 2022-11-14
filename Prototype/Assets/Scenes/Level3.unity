@@ -615,9 +615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9de3e186fa943af9b5b523cb4b133e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 12
   direction: {x: 0, y: 0}
-  jumpSpeed: 12
+  jumpSpeed: 10
   jumpDelay: 1
   rb: {fileID: 193611984}
   animator: {fileID: 0}
@@ -628,11 +628,13 @@ MonoBehaviour:
   maxSpeed: 7
   linearDrag: 2
   gravity: 1
-  fallMultiplier: 3
+  fallMultiplier: 2.5
   onGround: 0
   groundLength: 0.1
   colliderOffset: {x: 0.3, y: 0, z: 0}
-  meteorShowerActive: 0
+  restController: {fileID: 9100000, guid: badbb7aeec204443f807926e3fb8e8c6, type: 2}
+  walkController: {fileID: 9100000, guid: 41465f9f13b95f54aa04d839e97b635b, type: 2}
+  jumpController: {fileID: 9100000, guid: 99b7490ca7d3c894e81df7448bbc8d85, type: 2}
 --- !u!114 &193611982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,9 +787,6 @@ MonoBehaviour:
   platforms:
   - {fileID: 1712250052}
   - {fileID: 380211379}
-  spawner: {fileID: 0}
-  playerShield: {fileID: 0}
-  shieldPowerup: {fileID: 0}
 --- !u!95 &193611988
 Animator:
   serializedVersion: 4
@@ -5848,7 +5847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1670899496
 MonoBehaviour:
   m_ObjectHideFlags: 0
