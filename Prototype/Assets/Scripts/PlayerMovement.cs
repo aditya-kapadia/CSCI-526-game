@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Physics")]
     public float maxSpeed = 7f;
+    public float maxSpeedSlowdown = 7f;
     public float linearDrag = 2f;
     public float gravity = 1;
     public float fallMultiplier = 1f;
@@ -33,9 +34,13 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("MeteorShower")]
     public bool meteorShowerActive = false;
+    public bool goalReached = false;
+	
     public RuntimeAnimatorController restController;
     public RuntimeAnimatorController walkController;
     public RuntimeAnimatorController jumpController;
+    public RuntimeAnimatorController winController;
+    public RuntimeAnimatorController sadController;
 
     void Start()
     {
@@ -52,15 +57,15 @@ public class PlayerMovement : MonoBehaviour
 
         onGround = Physics2D.Raycast(transform.position + colliderOffset, Vector2.down, groundLength, groundLayer) || Physics2D.Raycast(transform.position - colliderOffset, Vector2.down, groundLength, groundLayer);
 
-        if(Input.GetButtonDown("Jump"))
+        if(!goalReached)
         {
-            jumpTimer = Time.time + jumpDelay;
+            if (Input.GetButtonDown("Jump"))
+            {
+                jumpTimer = Time.time + jumpDelay;
+            }
+
+            direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
-
-        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        
-
     }
     void FixedUpdate()
     {
@@ -75,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void moveCharacter(float horizontal)
     {
-        if (horizontal != 0)
+        if (!goalReached && horizontal != 0)
         {
             //Debug.Log("Player moved");
             GameObject spawner = GameObject.FindGameObjectWithTag("SpawnPoint");
@@ -86,18 +91,29 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        
-        rb.AddForce(Vector2.right * horizontal * moveSpeed);
+
+        if(!goalReached)
+            rb.AddForce(Vector2.right * horizontal * moveSpeed);
+        else
+        {
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeedSlowdown, rb.velocity.y);
+            if (maxSpeedSlowdown > 0) maxSpeedSlowdown -= 0.5f;
+            else maxSpeedSlowdown = 0f;
+        }
 
         if((horizontal > 0 && !facingRight) || (horizontal < 0 && facingRight))
         {
             Flip();
         }
-        if(Mathf.Abs(rb.velocity.x) > maxSpeed)
+        if(!goalReached && Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+        }/*
+        if(goalReached)
+        {
+            playerAnimation.runtimeAnimatorController = winController;
         }
-        if(onGround)
+        else if(onGround)
         {
             if (direction.x == 0)
             {
@@ -110,16 +126,7 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             playerAnimation.runtimeAnimatorController = jumpController;
-        }
-        /*
-        if(direction.x == 0)
-        {
-            playerAnimation.runtimeAnimatorController = restController;
-        } else
-        {
-            playerAnimation.runtimeAnimatorController = walkController;
-        }
-        */
+        }*/
         //animator.SetFloat("horizontal", Mathf.Abs(rb.velocity.x));
     }
     void Jump()
@@ -161,6 +168,10 @@ public class PlayerMovement : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
+    }
+    public void atGoal()
+    {
+        goalReached = true;
     }
     private void OnDrawGizmos()
     {
