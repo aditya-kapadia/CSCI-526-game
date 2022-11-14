@@ -8,13 +8,13 @@ public class HintMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(hintMenu.activeSelf)
-        {
-            Time.timeScale = 0f;
-        } else
-        {
-            Time.timeScale = 1f;
-        }
+        //if(hintMenu.activeSelf)
+        //{
+        //    Time.timeScale = 0f;
+        //} else
+        //{
+        //    Time.timeScale = 1f;
+        //}
     }
 
     // Update is called once per frame
