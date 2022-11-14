@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
         if(!goalReached && Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
-        }/*
+        }
         if(goalReached)
         {
             playerAnimation.runtimeAnimatorController = winController;
@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             playerAnimation.runtimeAnimatorController = jumpController;
-        }*/
+        }
         //animator.SetFloat("horizontal", Mathf.Abs(rb.velocity.x));
     }
     void Jump()
