@@ -17,10 +17,19 @@ public class MovePlatform : MonoBehaviour
     private bool scriptEnabled;
     private bool platformMoved;
 
+    private SpriteRenderer sprite;
+    private Color color;
+
     private void Start()
     {
         scriptEnabled = true;
         platformMoved = false;
+
+        // Make platform invisible
+        sprite = gameObject.GetComponent<SpriteRenderer>();
+        color = sprite.color;
+        color.a = 0;
+        sprite.color = color;
     }
     private void OnDisable()
     {
@@ -36,12 +45,15 @@ public class MovePlatform : MonoBehaviour
     {
         if (scriptEnabled)
         {
-
             // First delete demo cursor and platform
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Demo"))
             {
                 Destroy(obj);
             }
+
+            // Turn platform visible
+            color.a = 1;
+            sprite.color = color;
 
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
@@ -65,6 +77,10 @@ public class MovePlatform : MonoBehaviour
             if (gameObject.CompareTag("FallingPlatform"))
             {
                 gameObject.GetComponent<FallingPlatform>().UpdatePosition();
+            }
+            if (gameObject.CompareTag("FlyingPlatform"))
+            {
+                gameObject.GetComponent<level4_immovable>().UpdatePosition();
             }
 
             platformMoved = true;
