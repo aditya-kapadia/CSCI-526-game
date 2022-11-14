@@ -27,7 +27,6 @@ public class starsHandler : MonoBehaviour
 
     public void starsAchieved(double avgCoinsCollected)
     {
-
         avgCoinsCollected = avgCoinsCollected * 100;
         min_coins.enabled = false;
         level_success.enabled = true;
@@ -41,14 +40,14 @@ public class starsHandler : MonoBehaviour
             min_coins.enabled = true;
             //# stars[0].SetActive(true);
         }
-        else if (avgCoinsCollected >= 66 && avgCoinsCollected <=80)
+        else if (avgCoinsCollected >= 66 && avgCoinsCollected <80)
         {
             stars[0].SetActive(true);
             nextButton.SetActive(true);
             //min_coins.enabled = false;
         }
 
-        else if (avgCoinsCollected >80 && avgCoinsCollected < 100)
+        else if (avgCoinsCollected >=80 && avgCoinsCollected < 100)
         {
             stars[0].SetActive(true);
             stars[1].SetActive(true);
