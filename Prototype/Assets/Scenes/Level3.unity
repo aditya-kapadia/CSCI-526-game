@@ -627,17 +627,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   maxSpeed: 7
+  maxSpeedSlowdown: 7
   linearDrag: 2
   gravity: 1
   fallMultiplier: 2.5
   onGround: 0
   groundLength: 0.1
   colliderOffset: {x: 0.3, y: 0, z: 0}
+  meteorShowerActive: 0
   goalReached: 0
   restController: {fileID: 9100000, guid: badbb7aeec204443f807926e3fb8e8c6, type: 2}
   walkController: {fileID: 9100000, guid: 41465f9f13b95f54aa04d839e97b635b, type: 2}
   jumpController: {fileID: 9100000, guid: 99b7490ca7d3c894e81df7448bbc8d85, type: 2}
   winController: {fileID: 9100000, guid: e1c1b77c71030894e837e9ba2c627fae, type: 2}
+  sadController: {fileID: 0}
 --- !u!114 &193611982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,6 +793,9 @@ MonoBehaviour:
   platforms:
   - {fileID: 1712250052}
   - {fileID: 380211379}
+  spawner: {fileID: 0}
+  playerShield: {fileID: 0}
+  shieldPowerup: {fileID: 0}
 --- !u!95 &193611988
 Animator:
   serializedVersion: 4
@@ -1268,7 +1274,7 @@ PrefabInstance:
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 257852e64a81f4756a7f952444912354, type: 3}
+      objectReference: {fileID: 21300000, guid: 59c78faf9edf24bc78837a7cdf128f0a, type: 3}
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Color.b
       value: 0.9697338
@@ -4895,7 +4901,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e10e932eb6d1485786cdae2d71d3028, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4c6d7c8aa0d94e8ea5f54580672235a, type: 3}
   m_Color: {r: 0.9716981, g: 0.96859586, b: 0.9671146, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6229,7 +6235,7 @@ PrefabInstance:
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5e10e932eb6d1485786cdae2d71d3028, type: 3}
+      objectReference: {fileID: 21300000, guid: d4c6d7c8aa0d94e8ea5f54580672235a, type: 3}
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -6960,7 +6966,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 257852e64a81f4756a7f952444912354, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59c78faf9edf24bc78837a7cdf128f0a, type: 3}
   m_Color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
