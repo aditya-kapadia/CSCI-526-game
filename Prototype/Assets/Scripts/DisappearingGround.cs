@@ -29,7 +29,14 @@ public class DisappearingGround : MonoBehaviour
         //gameObject.SetActive(enabled);
         foreach(Transform child in gameObject.transform)
         {
-            child.gameObject.SetActive(displayGround);
+            if (child.gameObject.name == "DisappearingGround1")
+            {
+                child.gameObject.SetActive(displayGround);
+            }
+            else
+            {
+                child.gameObject.SetActive(!displayGround);
+            }
         }
     }
 
