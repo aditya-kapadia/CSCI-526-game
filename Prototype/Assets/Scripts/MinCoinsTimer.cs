@@ -18,7 +18,7 @@ public class MinCoinsTimer : MonoBehaviour
 
     IEnumerator WaitThenDie() {
         rend.enabled = true;
-        var whenAreWeDone = Time.time + 5;
+        var whenAreWeDone = Time.time + 10;
         while (Time.time < whenAreWeDone)
         {
             yield return new WaitForSeconds((float)0.5);
