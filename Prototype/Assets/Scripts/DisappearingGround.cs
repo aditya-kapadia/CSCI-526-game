@@ -11,6 +11,7 @@ public class DisappearingGround : MonoBehaviour
     void Start()
     {
         displayGround = true;
+        TogglePlatform();
     }
 
     // Update is called once per frame
