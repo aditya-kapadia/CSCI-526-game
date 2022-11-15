@@ -9,7 +9,7 @@ public class LevelComplete : MonoBehaviour
     public sendtogform sg;
     public void Setup(double avgCoinsCollected)
     {
-        Debug.Log(sg);
+        // Debug.Log(sg);
         sg.Send();
         MovePlatform.platformsUsed = 0;
         DeathScript.attempts = 0;

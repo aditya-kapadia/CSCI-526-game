@@ -52,7 +52,7 @@ public class sendtogform : MonoBehaviour{
     {
         // Debug.Log("Post");
         WWWForm form = new WWWForm();
-        Debug.Log(s1+s2+s3+s4+s5);
+        // Debug.Log(s1+s2+s3+s4+s5);
         form.AddField("entry.252900137",s1);
         form.AddField("entry.1830174599",s2);
         form.AddField("entry.559368451",s3);
