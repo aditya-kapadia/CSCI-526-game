@@ -16,6 +16,7 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private GameObject spawner;
     [SerializeField] private GameObject playerShield;
     [SerializeField] private GameObject shieldPowerup;
+    public GameObject[] level4_platforms;
 
     private bool removingShield;
 
@@ -98,6 +99,17 @@ public class DeathScript : MonoBehaviour
         // Reset collectable counter
         ItemCollector.collectables = 0;
         collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
+
+
+        foreach (GameObject platform in level4_platforms)
+            {
+            // Bring back falling platforms
+            if (platform.CompareTag("l4FlyingPlatform"))
+            {
+                platform.SetActive(true);
+                platform.GetComponent<level4_immovable>().StopRise();
+            }
+            }
 
         // Make platforms moveable again
         foreach (GameObject platform in platforms)

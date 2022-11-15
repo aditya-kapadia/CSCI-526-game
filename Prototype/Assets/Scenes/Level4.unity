@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 50462590}
   m_Layer: 3
   m_Name: FlyingGround3
-  m_TagString: FlyingPlatform
+  m_TagString: l4FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 193611979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da395315884a4734fb27250406958531, type: 3}
+  m_Script: {fileID: 11500000, guid: e58b8f9e0b9654f23959c30fdef83c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 1184985475}
@@ -1065,10 +1065,14 @@ MonoBehaviour:
   - {fileID: 131844765}
   platforms:
   - {fileID: 380211379}
+  spawner: {fileID: 0}
+  playerShield: {fileID: 0}
+  shieldPowerup: {fileID: 0}
+  level4_platforms:
   - {fileID: 745962942}
   - {fileID: 1615861632}
-  - {fileID: 50462583}
   - {fileID: 219831754}
+  - {fileID: 50462583}
 --- !u!1 &219831754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1088,7 @@ GameObject:
   - component: {fileID: 219831761}
   m_Layer: 3
   m_Name: FlyingGround4
-  m_TagString: FlyingPlatform
+  m_TagString: l4FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3242,7 +3246,7 @@ GameObject:
   - component: {fileID: 745962949}
   m_Layer: 3
   m_Name: FlyingGround1
-  m_TagString: FlyingPlatform
+  m_TagString: l4FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5267,7 +5271,7 @@ GameObject:
   - component: {fileID: 1615861639}
   m_Layer: 3
   m_Name: FlyingGround2
-  m_TagString: FlyingPlatform
+  m_TagString: l4FlyingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6861,6 +6865,7 @@ GameObject:
   - component: {fileID: 1976885797}
   - component: {fileID: 1976885796}
   - component: {fileID: 1976885798}
+  - component: {fileID: 1976885799}
   m_Layer: 0
   m_Name: sun
   m_TagString: Death
@@ -6961,6 +6966,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.06, y: 4.1}
   m_EdgeRadius: 0
+--- !u!114 &1976885799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976885795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c4934a9552d4d3182748c33191be1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1988382682
 PrefabInstance:
   m_ObjectHideFlags: 0

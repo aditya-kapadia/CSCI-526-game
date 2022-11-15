@@ -40,7 +40,7 @@ public class sendtogform : MonoBehaviour{
         // Debug.Log("BC:"+brickCount);
         attempts = DeathScript.attempts;
         // Debug.Log("Attempts in sendform:"+attempts);
-            attempts++;
+        attempts++;
         collectables = ItemCollector.gfromcollectable;
         // Debug.Log("Send");
         deathbyfall.deaths=0;
