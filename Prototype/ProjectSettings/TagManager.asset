@@ -23,6 +23,7 @@ TagManager:
   - Meteor
   - PowerUp
   - FlyingPlatform
+  - l4FlyingPlatform
   layers:
   - Default
   - TransparentFX
