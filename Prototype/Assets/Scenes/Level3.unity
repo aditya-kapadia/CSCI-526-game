@@ -2242,8 +2242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c02c38b599b94ae19275788dc1381d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 5
-  countDown: 5
+  destroyTime: 10
+  countDown: 10
   rend: {fileID: 0}
 --- !u!1 &728299172
 GameObject:
