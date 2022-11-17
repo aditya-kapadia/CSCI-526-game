@@ -160,7 +160,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.88, y: 0.68}
+    oldSize: {x: 0.87, y: 0.73}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -210,7 +210,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f5fc2a3a6e0a49c6b7c76ebd698ea23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e5c91a75b51244468173c43929f8428, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1110,7 +1110,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.88, y: 0.68}
+    oldSize: {x: 0.87, y: 0.73}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1160,7 +1160,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f5fc2a3a6e0a49c6b7c76ebd698ea23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e5c91a75b51244468173c43929f8428, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1526,7 +1526,7 @@ PrefabInstance:
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 59c78faf9edf24bc78837a7cdf128f0a, type: 3}
+      objectReference: {fileID: 21300000, guid: a34c80160a2914831bf6be9c8b025e8f, type: 3}
     - target: {fileID: 6901761420376607769, guid: 7295b2cfbb77448e98842d1c66554af5, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -3289,7 +3289,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.88, y: 0.68}
+    oldSize: {x: 0.87, y: 0.73}
     newSize: {x: 0.88, y: 0.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3339,7 +3339,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f5fc2a3a6e0a49c6b7c76ebd698ea23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e5c91a75b51244468173c43929f8428, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4677,7 +4677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 04bd6dc0a05564f64876f62c7c4022b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b67523d3bb4c646d6b1b9d12bebb8354, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5314,7 +5314,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.88, y: 0.68}
+    oldSize: {x: 0.87, y: 0.73}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5364,7 +5364,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f5fc2a3a6e0a49c6b7c76ebd698ea23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e5c91a75b51244468173c43929f8428, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6567,7 +6567,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.97, y: 0.68}
+    oldSize: {x: 0.96, y: 0.48}
     newSize: {x: 0.984375, y: 0.984375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6617,7 +6617,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 59c78faf9edf24bc78837a7cdf128f0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a34c80160a2914831bf6be9c8b025e8f, type: 3}
   m_Color: {r: 0.8517266, g: 0.9339623, b: 0.9290943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
