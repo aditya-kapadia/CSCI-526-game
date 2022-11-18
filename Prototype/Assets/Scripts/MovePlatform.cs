@@ -25,6 +25,8 @@ public class MovePlatform : MonoBehaviour
         scriptEnabled = true;
         platformMoved = false;
 
+        GetComponent<BoxCollider2D>().isTrigger = true;
+
         // Make platform invisible
         sprite = gameObject.GetComponent<SpriteRenderer>();
         color = sprite.color;
