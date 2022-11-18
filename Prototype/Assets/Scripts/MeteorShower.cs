@@ -20,7 +20,7 @@ public class MeteorShower : MonoBehaviour
         while (stopSpawning == false)
         {
             
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(7f);
             GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
             foreach (GameObject meteor in meteors)
             {
@@ -29,18 +29,21 @@ public class MeteorShower : MonoBehaviour
 
             yield return StartCoroutine(ShakeCamera(2f, 0.25f));
             yield return new WaitForSeconds(0.75f);
+            
             for (int i = 0; i < numMeteors; i++)
             {
-
-                
                 pos.x += Random.Range(0f, 20f);
                 pos.y += Random.Range(0f, 10f);
                 
+                if (stopSpawning == false)
+                { 
+                    Instantiate(spawnee, pos, transform.rotation);
+                    yield return new WaitForSeconds(0.15f);
 
-                Instantiate(spawnee, pos, transform.rotation);
-                yield return new WaitForSeconds(0.15f);
-
-                pos = transform.position;
+                    pos = transform.position;
+                }
+                else
+                    break;
             }
             
         }
@@ -68,8 +71,15 @@ public class MeteorShower : MonoBehaviour
 
     public void StopMeteorShower()
     {
-        StopAllCoroutines();
         stopSpawning = true;
+        StopAllCoroutines();
+        
+        GameObject[] meteors = GameObject.FindGameObjectsWithTag("Meteor");
+        foreach (GameObject meteor in meteors)
+        {
+            Destroy(meteor);
+        }
+        
 
     }
 

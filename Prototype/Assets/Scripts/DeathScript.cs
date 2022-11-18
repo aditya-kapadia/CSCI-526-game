@@ -19,6 +19,7 @@ public class DeathScript : MonoBehaviour
     public GameObject[] level4_platforms;
 
     private bool removingShield;
+    private bool levelResetting = false;
 
     public static int attempts = 0;
     // Start is called before the first frame update
@@ -54,8 +55,8 @@ public class DeathScript : MonoBehaviour
                     Destroy(meteor);
 
                 }
-
-                StartCoroutine(ResetLevel());
+                if (levelResetting == false)
+                    StartCoroutine(ResetLevel());
             }
             else
             {
@@ -69,7 +70,7 @@ public class DeathScript : MonoBehaviour
         {
             if (playerShield)
             {
-                if (playerShield.activeSelf == false)
+                if (playerShield.activeSelf == false && levelResetting == false)
                     StartCoroutine(ResetLevel());
                 else
                 {
@@ -81,8 +82,19 @@ public class DeathScript : MonoBehaviour
 
     IEnumerator ResetLevel()
     {
+        levelResetting = true;
         attempts += 1;
         ItemCollector.gfromcollectable = 0;
+
+        // Resetting meteor shower components
+        if (playerShield)
+            playerShield.SetActive(false);
+        if (shieldPowerup)
+            shieldPowerup.GetComponent<ActivateShield>().ResetPowerupPosition();
+        if (spawner)
+            spawner.GetComponent<MeteorShower>().StopMeteorShower();
+
+        gameObject.GetComponent<PlayerMovement>().meteorShowerActive = false;
 
         StopCoroutine(RemoveShield());
         removingShield = false;
@@ -102,14 +114,14 @@ public class DeathScript : MonoBehaviour
 
 
         foreach (GameObject platform in level4_platforms)
-            {
+        {
             // Bring back falling platforms
             if (platform.CompareTag("l4FlyingPlatform"))
             {
                 platform.SetActive(true);
                 platform.GetComponent<level4_immovable>().StopRise();
             }
-            }
+        }
 
         // Make platforms moveable again
         foreach (GameObject platform in platforms)
@@ -128,20 +140,14 @@ public class DeathScript : MonoBehaviour
             }
         }
 
-        // Resetting meteor shower components
-        if (playerShield)
-            playerShield.SetActive(false);
-        if (shieldPowerup)
-            shieldPowerup.GetComponent<ActivateShield>().ResetPowerupPosition();
+
         if (spawner)
         {
-            spawner.GetComponent<MeteorShower>().StopMeteorShower();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             spawner.GetComponent<MeteorShower>().StartMeteorShower();
         }
 
-        gameObject.GetComponent<PlayerMovement>().meteorShowerActive = false;
-
+        levelResetting = false;
 
     }
 
@@ -151,16 +157,16 @@ public class DeathScript : MonoBehaviour
         {
             removingShield = true;
 
-            // Start blinking shield for 5 sec to signal to player that it will disappear soon
+            // Start blinking shield for 3 sec to signal to player that it will disappear soon
             playerShield.GetComponent<ActivateShield>().BlinkShield();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
 
             // Turn shield off
             playerShield.GetComponent<ActivateShield>().ShieldBlinking = false;
             playerShield.SetActive(false);
 
             // Reinit shield powerup in random location
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(1.5f);
             shieldPowerup.GetComponent<ActivateShield>().ReinitPowerup();
 
             removingShield = false;

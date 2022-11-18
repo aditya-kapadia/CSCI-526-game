@@ -67,7 +67,7 @@ public class ActivateShield : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerShield.SetActive(true);
-            gameObject.SetActive(false);
+            shieldPowerup.SetActive(false);
         }
     }
 
