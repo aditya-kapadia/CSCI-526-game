@@ -7,8 +7,6 @@ public class EnemyRotation : MonoBehaviour
     public Transform RotationCenter;
     public float angularSpeed, rotationRadius;
     private float posX, posY, angle = 0;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +21,12 @@ public class EnemyRotation : MonoBehaviour
 
         transform.position = new Vector2(posX, posY);
         angle = angle + Time.deltaTime * angularSpeed;
-        if(angle >= 360)
+   
+       
+        GameObject moon = GameObject.Find("Enemy");
+        if (angle >=0 && angle <= 10)
         {
-            angle = 0;
+            //moon.SetActive(false);
         }
 
     }
