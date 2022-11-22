@@ -46,6 +46,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Level5");
         Time.timeScale = 1f;
     }
+    public void GotoLvlSix()
+    {
+        sendtogform.level = 6;
+        sendtogform.startSessionID = DateTime.Now;
+        SceneManager.LoadScene("Level6");
+        Time.timeScale = 1f;
+    }
     public void GotoMainMenu()
     {
 
