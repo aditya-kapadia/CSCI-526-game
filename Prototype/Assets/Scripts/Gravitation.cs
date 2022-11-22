@@ -24,7 +24,7 @@ public class Gravitation : MonoBehaviour
         if(dist2player<=influencerange)
         {
             pullforce = (transform.position - player.position).normalized/(dist2player*intensity);
-            pullforce = pullforce*10;
+            pullforce = pullforce*100;
             Debug.Log(pullforce);
             playerbody.AddForce(pullforce, ForceMode2D.Force);
         }
