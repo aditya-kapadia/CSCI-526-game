@@ -4546,6 +4546,7 @@ GameObject:
   - component: {fileID: 1410455541}
   - component: {fileID: 1410455540}
   - component: {fileID: 1410455545}
+  - component: {fileID: 1410455546}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Death
@@ -4689,6 +4690,22 @@ MonoBehaviour:
   RotationCenter: {fileID: 1942615413}
   angularSpeed: 2
   rotationRadius: 3.5
+--- !u!114 &1410455546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410455539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214c430fafc8c4dbc99aa44ee1afee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 193611986}
+  influencerange: 25
+  intensity: 10
+  dist2player: 20
 --- !u!1 &1416921436
 GameObject:
   m_ObjectHideFlags: 0
