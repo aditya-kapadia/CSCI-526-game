@@ -143,4 +143,12 @@ public class MovePlatform : MonoBehaviour
             }
         }
     }
+    public void Update(){
+        if (int.Parse(PlatformCountText.text)==0)
+        {
+            if(target){
+            Destroy(target);
+            }
+        }
+    }
 }
