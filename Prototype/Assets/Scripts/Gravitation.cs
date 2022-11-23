@@ -25,7 +25,7 @@ public class Gravitation : MonoBehaviour
         {
             pullforce = (transform.position - player.position).normalized/(dist2player*intensity);
             pullforce = pullforce*50;
-            Debug.Log(pullforce);
+            // Debug.Log(pullforce);
             playerbody.AddForce(pullforce, ForceMode2D.Force);
         }
         // var directionOfBirdFromPlanet = (transform.position - player.position).normalized;
