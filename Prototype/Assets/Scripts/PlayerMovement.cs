@@ -35,12 +35,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("MeteorShower")]
     public bool meteorShowerActive = false;
     public bool goalReached = false;
-	
+    public bool isDead = false;
+    private Vector2 deadPos;
+
     public RuntimeAnimatorController restController;
     public RuntimeAnimatorController walkController;
     public RuntimeAnimatorController jumpController;
     public RuntimeAnimatorController winController;
-    public RuntimeAnimatorController sadController;
+    public RuntimeAnimatorController deadController;
 
     void Start()
     {
@@ -109,7 +111,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
         }
-        if(goalReached)
+        if(isDead)
+        {
+            playerAnimation.runtimeAnimatorController = deadController;
+            rb.position = deadPos;
+        } else if(goalReached)
         {
             playerAnimation.runtimeAnimatorController = winController;
         }
@@ -172,6 +178,19 @@ public class PlayerMovement : MonoBehaviour
     public void atGoal()
     {
         goalReached = true;
+    }
+    public void deathByEnemyAnimation()
+    {
+        deadPos = rb.position;
+        isDead = true;
+        rb.isKinematic = true;
+        StartCoroutine(restoreAnimation());
+    }
+    public IEnumerator restoreAnimation()
+    {
+        yield return new WaitForSeconds(1.6f);
+        isDead = false;
+        rb.isKinematic = false;
     }
     private void OnDrawGizmos()
     {

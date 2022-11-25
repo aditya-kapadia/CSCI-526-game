@@ -82,6 +82,7 @@ public class DeathScript : MonoBehaviour
 
     IEnumerator ResetLevel()
     {
+        yield return new WaitForSeconds(1.6f);
         levelResetting = true;
         attempts += 1;
         ItemCollector.gfromcollectable = 0;
