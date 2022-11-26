@@ -33,38 +33,44 @@ public class DeathScript2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Death"))
         {
-            attempts += 1;
-            ItemCollector.gfromcollectable = 0;
+            StartCoroutine(ResetLevel());
+        }
+    }
 
-            // Move player back to start
-            transform.position = startPoint.transform.position;
+    IEnumerator ResetLevel()
+    {
+        yield return new WaitForSeconds(1.6f);
+        attempts += 1;
+        ItemCollector.gfromcollectable = 0;
 
-            // Reactivate all collectables
-            foreach (GameObject collectable in collectables)
+        // Move player back to start
+        transform.position = startPoint.transform.position;
+
+        // Reactivate all collectables
+        foreach (GameObject collectable in collectables)
+        {
+            collectable.SetActive(true);
+        }
+
+        // Reset collectable counter
+        ItemCollector.collectables = 0;
+        collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
+
+        // Make platforms moveable again
+        foreach (GameObject platform in platforms)
+        {
+            platform.GetComponent<MovePlatform>().enabled = true;
+            // Bring back falling platforms
+            if (platform.CompareTag("FallingPlatform"))
             {
-                collectable.SetActive(true);
+                platform.SetActive(true);
+                platform.GetComponent<FallingPlatform>().StopFall();
             }
+        }
 
-            // Reset collectable counter
-            ItemCollector.collectables = 0;
-            collectablesText.text = ItemCollector.collectables + " / " + totalCollectablesText.text;
-
-            // Make platforms moveable again
-            foreach (GameObject platform in platforms)
-            {
-                platform.GetComponent<MovePlatform>().enabled = true;
-                // Bring back falling platforms
-                if (platform.CompareTag("FallingPlatform"))
-                {
-                    platform.SetActive(true);
-                    platform.GetComponent<FallingPlatform>().StopFall();
-                }
-            }
-
-            if (attempts == 1) {
-                TipMenu.SetActive(true);
-            }
-
+        if (attempts == 1)
+        {
+            TipMenu.SetActive(true);
         }
     }
 }
