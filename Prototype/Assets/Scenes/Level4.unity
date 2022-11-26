@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908c0fd1136d410db7a40ac0f8eb9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 193611981}
 --- !u!1 &334183315
 GameObject:
   m_ObjectHideFlags: 0
@@ -7627,7 +7627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908c0fd1136d410db7a40ac0f8eb9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 193611981}
 --- !u!61 &2145780492
 BoxCollider2D:
   m_ObjectHideFlags: 0

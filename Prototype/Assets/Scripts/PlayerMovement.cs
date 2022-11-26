@@ -179,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
     {
         goalReached = true;
     }
-    public void deathByEnemyAnimation()
+    public void deathByCollitionAnimation()
     {
         deadPos = rb.position;
         isDead = true;

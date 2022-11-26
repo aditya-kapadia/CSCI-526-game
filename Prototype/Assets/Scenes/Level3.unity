@@ -923,7 +923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318842098}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.88, y: -8.81, z: 0}
+  m_LocalPosition: {x: -0.88, y: -8.94, z: 0}
   m_LocalScale: {x: 0.9999069, y: 39.144585, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4231,6 +4231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5bd4f39dd64c4ae3b117d51dd818d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 193611981}
   destinationBlackHole: {fileID: 1591441296}
   spinSpeed: 5
   rotationsPerMinute: 25
@@ -5283,6 +5284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5bd4f39dd64c4ae3b117d51dd818d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 193611981}
   destinationBlackHole: {fileID: 1160550961}
   spinSpeed: 5
   rotationsPerMinute: 25

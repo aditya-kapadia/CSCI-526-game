@@ -23,7 +23,7 @@ public class deathbyfall : MonoBehaviour
         {
             deaths+=1;
             player.deathByFallAnimation();
-            Debug.Log("DF:"+deaths);
+            // Debug.Log("DF:"+deaths);
         }
     }
 }

@@ -22,7 +22,7 @@ public class deathbycollision : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             deaths += 1;
-            player.deathByEnemyAnimation();
+            player.deathByCollitionAnimation();
             // Debug.Log("DC:"+deaths);
         }
     }

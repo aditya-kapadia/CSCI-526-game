@@ -7,6 +7,7 @@ public class BlackHole : MonoBehaviour
 
     // Variables for transport
     private GameObject player;
+    public PlayerMovement playerMovement;
     [SerializeField] private GameObject destinationBlackHole;
     private bool playerCollide = false;
     public float spinSpeed = 5f;
@@ -23,6 +24,7 @@ public class BlackHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerMovement.isDead) return;
         // Rotate black hole
         transform.Rotate(0, 0, -6.0f * rotationsPerMinute * Time.deltaTime);
 
@@ -61,6 +63,7 @@ public class BlackHole : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (playerMovement.isDead) return;
         if (other.gameObject.CompareTag("Player"))
         {
             if (!playerCollide)
