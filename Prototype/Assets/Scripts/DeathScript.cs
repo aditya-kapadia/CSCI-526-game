@@ -55,8 +55,13 @@ public class DeathScript : MonoBehaviour
                     Destroy(meteor);
 
                 }
-                if (levelResetting == false)
+                PlayerMovement player = (PlayerMovement)(GetComponent<PlayerMovement>());
+                if (levelResetting == false && !player.isDead)
+                {
+                    player.deathByCollitionAnimation();
                     StartCoroutine(ResetLevel());
+                }
+                    
             }
             else
             {
