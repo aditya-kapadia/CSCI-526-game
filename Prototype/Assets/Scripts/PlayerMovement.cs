@@ -186,9 +186,18 @@ public class PlayerMovement : MonoBehaviour
         rb.isKinematic = true;
         StartCoroutine(restoreAnimation());
     }
+    public void deathByFallAnimation()
+    {
+        deadPos = rb.position;
+        isDead = true;
+        rb.isKinematic = true;
+        StartCoroutine(restoreAnimation());
+    }
+
     public IEnumerator restoreAnimation()
     {
         yield return new WaitForSeconds(1.6f);
+        Debug.Log("resetting animation");
         isDead = false;
         rb.isKinematic = false;
     }
