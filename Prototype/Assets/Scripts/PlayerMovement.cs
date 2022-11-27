@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
             rb.position = deadPos;
         } else if(goalReached)
         {
+            GameObject.Find("Enemy").GetComponent<BoxCollider2D>().enabled = false;
             playerAnimation.runtimeAnimatorController = winController;
         }
         else if(onGround)
