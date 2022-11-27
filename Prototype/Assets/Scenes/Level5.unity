@@ -732,7 +732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318842098}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.8767, y: -14.92, z: 0}
+  m_LocalPosition: {x: -0.88, y: -9.17, z: 0}
   m_LocalScale: {x: 0.9999069, y: 39.144585, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -751,6 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908c0fd1136d410db7a40ac0f8eb9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 975416918}
 --- !u!1001 &380211378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1051,7 +1052,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0000009536743, y: 0.055247784}
@@ -1146,6 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c4934a9552d4d3182748c33191be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 975416918}
 --- !u!1001 &418123511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3079,11 +3081,12 @@ MonoBehaviour:
   colliderOffset: {x: 0.3, y: 0, z: 0}
   meteorShowerActive: 0
   goalReached: 0
+  isDead: 0
   restController: {fileID: 9100000, guid: badbb7aeec204443f807926e3fb8e8c6, type: 2}
   walkController: {fileID: 9100000, guid: 41465f9f13b95f54aa04d839e97b635b, type: 2}
   jumpController: {fileID: 9100000, guid: 99b7490ca7d3c894e81df7448bbc8d85, type: 2}
   winController: {fileID: 9100000, guid: e1c1b77c71030894e837e9ba2c627fae, type: 2}
-  sadController: {fileID: 0}
+  deadController: {fileID: 9100000, guid: 726cf3e285fb211428da8e8a5b6034d2, type: 2}
 --- !u!114 &975416919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3936,6 +3939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908c0fd1136d410db7a40ac0f8eb9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!61 &1135190328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4022,7 +4026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135190326}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.66, y: 16.26, z: 0}
+  m_LocalPosition: {x: -0.7, y: 13.9, z: 0}
   m_LocalScale: {x: 0.9999069, y: 39.144585, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

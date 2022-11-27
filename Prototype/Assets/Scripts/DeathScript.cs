@@ -55,8 +55,13 @@ public class DeathScript : MonoBehaviour
                     Destroy(meteor);
 
                 }
-                if (levelResetting == false)
+                PlayerMovement player = (PlayerMovement)(GetComponent<PlayerMovement>());
+                if (levelResetting == false && !player.isDead)
+                {
+                    player.deathByCollitionAnimation();
                     StartCoroutine(ResetLevel());
+                }
+                    
             }
             else
             {
@@ -82,6 +87,7 @@ public class DeathScript : MonoBehaviour
 
     IEnumerator ResetLevel()
     {
+        yield return new WaitForSeconds(1.6f);
         levelResetting = true;
         attempts += 1;
         ItemCollector.gfromcollectable = 0;

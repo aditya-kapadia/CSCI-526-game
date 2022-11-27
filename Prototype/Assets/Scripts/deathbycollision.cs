@@ -5,6 +5,7 @@ using UnityEngine;
 public class deathbycollision : MonoBehaviour
 {
     public static int deaths = 0;
+    public PlayerMovement player;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class deathbycollision : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             deaths += 1;
+            player.deathByCollitionAnimation();
             // Debug.Log("DC:"+deaths);
         }
     }
