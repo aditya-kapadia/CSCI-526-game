@@ -16,6 +16,7 @@ public class MovePlatform : MonoBehaviour
     public GameObject target;
     private bool scriptEnabled;
     private bool platformMoved;
+    private static int myprev;
 
     private SpriteRenderer sprite;
     private Color color;
@@ -113,8 +114,7 @@ public class MovePlatform : MonoBehaviour
                 // Adjust platform count
                 platformsLeft = int.Parse(PlatformCountText.text);
 
-
-                if (platformsLeft == 1)
+                if (platformsLeft == 1 && gameObject.GetInstanceID()!=myprev)
                 {
                     platformsLeft--;
                     platformsUsed++;
@@ -136,9 +136,14 @@ public class MovePlatform : MonoBehaviour
                 {
                     return;
                 }
+
+                if(gameObject.GetInstanceID()!=myprev)
+                {
                 platformsLeft--;
+                myprev = gameObject.GetInstanceID();
                 PlatformCountText.text = platformsLeft.ToString();
                 platformsUsed++;
+                }
 
             }
         }
